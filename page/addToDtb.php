@@ -7,11 +7,12 @@ $Prenom = isset ( $_POST ['Prenom'] ) ? $_POST ['Prenom'] : NULL;
 $Adresse = isset ( $_POST ['Adresse'] ) ? $_POST ['Adresse'] : NULL;
 $Phone = isset ( $_POST ['Phone'] ) ? $_POST ['Phone'] : NULL;
 $Birthdate = isset ( $_POST ['Birthdate'] ) ? $_POST ['Birthdate'] : NULL;
-$Mail = isset ( $_POST ['Mail'] ) ? $_POST ['Mail'] : NULL;
 $NumSecu = isset ( $_POST ['NumSecu'] ) ? $_POST ['NumSecu'] : NULL;
+//$Id = $_SESSION["Id"][0];
+$Id = isset ( $_POST ['Id'] ) ? $_POST ['Id'] : NULL;
 //include ('./mysql/ControleurConnexion.php');
 require_once ('../mysql/ControleurConnexion.php');
 $connexion = new ControleurConnexion ();
-$connexion->inserer ( "userInfos", "Id,Nom,Prenom,Adresse,Birthdate,Phone,Mail,NumSecu", "NULL,'$Nom','$Prenom','$Adresse','$Birthdate', '$Phone','$Mail','$NumSecu'" );
+$connexion->modifier ( "userInfos", "'$Id', $Nom','$Prenom','$Adresse','$Birthdate', '$Phone', 'ad@min.fr', '$NumSecu', '123'", "Id=" . $Id, "", "" );
 
-include 'header.php';
+include 'modifUserData.php';

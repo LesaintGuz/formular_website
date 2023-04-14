@@ -2,9 +2,9 @@
 
 //echo " <div style=\"color:#ff00ff;\"> GET<pre>", print_r ( $_GET ), "</pre></div>";
 require_once ('../mysql/ControleurConnexion.php');
-$id = $_SESSION["Id"];
+$Id = $_SESSION["Id"][0];
 $con = new ControleurConnexion();
-$datas = $con->consulter('Nom,Prenom,Adresse,Birthdate,Phone,NumSecu', 'userInfos', '', 'Id='+$Id, '', '', '', '');
+$datas = $con->consulter('Nom,Prenom,Adresse,Birthdate,Phone,NumSecu', 'userInfos', '', 'Id=' . $Id, '', '', '', '');
 
 echo <<<EOF
  <!DOCTYPE html>
@@ -25,58 +25,61 @@ echo <<<EOF
 </div>
 <div>
 	<p>Nom</p>
-	<p><input type="text" name="Nom" class="obligatoire" required maxLength="45" value="
-        
+	<p><input type="text" name="Nom" class="obligatoire" required maxLength="45" value="     
 EOF;
-echo $datas[0];
+echo $datas[0][0];
 echo <<<EOF
-    "/></p>
+"/></p>
 </div>
 <div>
 	<p>Prenom</p>
 	<p><input type="text" name="Prenom" class="obligatoire" required maxLength="45" value="
 EOF;
-echo $datas[1];
+echo $datas[0][1];
 echo <<<EOF
-    "/></p>
+"/></p>
 </div>
 <div>
 	<p>Adresse</p>
 	<p><input type="text" name="Adresse" class="obligatoire" required maxLength="255" value="
 EOF;
-echo $datas[2];
+echo $datas[0][2];
 echo <<<EOF
-    "/></p>
-</div>
-<div>
+"/></p></div>
+    <div>
 	<p>Date de naissance</p>
 	<p><input type="date" name="Birthdate" class="obligatoire" required value="
-    EOF;
-    echo $datas[3];
-    echo <<<EOF
-    "/></p>/>
-</div>
-<div>
-	<p>Numéro de téléphone</p>
-	<p><input type="tel" name="Phone" class="obligatoire" required value="
-    EOF;
-echo $datas[4];
+EOF;
+echo $datas[0][3];
 echo <<<EOF
-    "/></p>
-</div>
-<div>
+"/></p>
+    </div>
+    <div>
+	<p>Numéro de téléphone</p>
+	<p><input type="tel" name="Phone" class="obligatoire" required
+    pattern="[0]{1}[0-9]{1]-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}"
+    value="
+EOF;
+echo $datas[0][4];
+echo <<<EOF
+    "/></p></div>
+    <div>
 	<p>Numéros de sécurité sociale</p>
 	<p><input type="text" name="NumSecu" class="obligatoire" required minlength="16" maxLength="16" value="
 EOF;
-echo $datas[5];
+echo $datas[0][5];
 echo <<<EOF
-    "/></p>
-</div>
-<div>
-		<p><input name="bouton_valider" type="submit" value="Raccooner" /></p>
-</div>
-<img src="https://media.tenor.com/NnvNNOXwE6cAAAAM/raccoon-gossip.gif">
-</form>
-</div>
-</body>
+    "/></p></div>
+    <div>
+	<p><input name="bouton_valider" type="submit" value="Modifier les données" /></p>
+    </div>
+    <img src="https://media.tenor.com/NnvNNOXwE6cAAAAM/raccoon-gossip.gif">
+    <input type="hidden" name="Id" value="
+EOF;
+echo $Id;
+echo <<<EOF
+">
+    </form>
+    </div>
+    </body>
 EOF;
