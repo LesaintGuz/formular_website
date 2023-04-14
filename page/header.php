@@ -5,7 +5,7 @@
 $Nom = isset ( $_GET ['Nom'] ) ? $_GET ['Nom'] : NULL;
 if (!empty($Nom)){
 //include ('./mysql/ControleurConnexion.php');
-require_once ('./mysql/ControleurConnexion.php');
+require_once ('../mysql/ControleurConnexion.php');
 $connexion = new ControleurConnexion ();
 $connexion->inserer ( "userInfos", "Id,Nom,Prenom,Adresse,Birthdate,Phone,Mail,NumSecu", "NULL,'$Nom','$Prenom','$Adresse','$Phone','$Birthdate','$Mail','$NumSecu'" );
 }
@@ -23,7 +23,7 @@ echo <<<EOF
 <div>Clément GOMEZ & Ulysse HAV֤E></div>
 <div>Raccoon Kingdom</div>
 <div><img src="https://i.gifer.com/2rGa.gif"></div>
-<form action="index.php" method="GET" enctype="application/x-www-form-urlencoded">
+<form action="p1.php" method="GET" enctype="application/x-www-form-urlencoded">
 <div>
 		<p>Nom</p>
 		<p><input type="text" name="Nom" class="obligatoire" required maxLength="45"/></p>
