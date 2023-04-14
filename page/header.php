@@ -29,7 +29,11 @@ echo <<<EOF
 <div>Clément GOMEZ & Ulysse HAV֤E</div>
 <div>Raccoon Kingdom</div>
 <div><img src="https://i.gifer.com/2rGa.gif"></div>
-<form action="p1.php" method="GET" enctype="application/x-www-form-urlencoded">
+
+
+<button type="button" onclick="changeAddFormVisibility();">+</button>
+<div id='addBtn' hidden>
+<form action="p1.php" method="POST" enctype="application/x-www-form-urlencoded">
 <div>
 		<p>Nom</p>
 		<p><input type="text" name="Nom" class="obligatoire" required maxLength="45"/></p>
@@ -63,6 +67,13 @@ echo <<<EOF
 </div>
 <img src="https://media.tenor.com/NnvNNOXwE6cAAAAM/raccoon-gossip.gif">
 </form>
+</div>
+<script>
+function changeAddFormVisibility(){
+	var formDiv = document.getElementById('addBtn');
+	formDiv.hidden= !formDiv.hidden;
+}
+</script>
 </body>
 
 EOF;

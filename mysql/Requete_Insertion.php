@@ -11,7 +11,7 @@ class Requete_Insertion
 		// echo "<br />insertion",$host,$bdd,$login,$pass;
 	}
 	public function query($insert, $tbl_name, $values) 
-	{
+	{	
 		try {
 			$dns = 'mysql:host=' . $this->host . ';dbname=' . $this->bdd . ';port=3306';
 			$connexion = new PDO ( $dns, $this->login, $this->pass );
