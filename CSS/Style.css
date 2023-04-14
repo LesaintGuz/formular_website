@@ -1,0 +1,48 @@
+@font-face {
+    font-family: ptarmi;
+    src: url(ptarmi.ttf);
+}
+
+* {
+    font-family: 'ptarmi';
+    text-align: center;
+}
+
+body{
+    padding-top: 2% ;
+}
+
+table{
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+thead{
+
+}
+
+td,th {
+    text-align: center;
+    border: 2px solid black;
+    width: 30%;
+}
+
+/* <tr class="tr_h"> */
+#tr_h{
+   
+    
+}
+
+tbody{
+
+}
+
+/* <tr class="tr_b"> */ 
+#tr_b{
+    
+}
+
