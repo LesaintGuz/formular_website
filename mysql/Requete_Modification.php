@@ -18,20 +18,21 @@ class Requete_Modification
 			$connexion = new PDO($dns, $this->login, $this->pass);
 		} catch ( Exception $e ) {die ( "Impossible de se connecter: " . $e->getMessage () );}
 		
-		$req = "UPDATE ".$table." SET ".$set;
+		$req = "UPDATE ". $table . " SET ". $set;
 		if(!empty($where)) $req .= " WHERE ".$where;
 		if(!empty($orderby)) $req .= " ORDER BY ".$orderby;
 		if(!empty($limit)) $req .= " LIMIT ".$limit;
 //echo "<div style=\"color:#ff0000;\">24 Requete_Modification=",$req,"</div>";
+		echo $req;
 		$sth=$connexion->prepare("$req");
 		$sth->execute();
 		
 		//enregistre la requete dans sif/log
-		require_once ('Enregistreur.php');
-		$enregistreur = new Enregistreur ( $req );
+		/*require_once ('Enregistreur.php');
+		$enregistreur = new Enregistreur ( $req );*/
 //echo "<div style=\"color:#ff0000;\">24 Enregistrement_rq=",$req,"</div>";
 		
-		$enregistreur->ecrire ();
+		//$enregistreur->ecrire ();
 	}
 	public function destruction()
 	{$connection=NULL;}

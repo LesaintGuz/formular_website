@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 //echo " <div style=\"color:#ff00ff;\"> GET<pre>", print_r ( $_GET ), "</pre></div>";
 require_once ('../mysql/ControleurConnexion.php');
 $Id = $_SESSION["Id"][0];
@@ -25,7 +25,7 @@ echo <<<EOF
 </div>
 <div>
 	<p>Nom</p>
-	<p><input type="text" name="Nom" class="obligatoire" required maxLength="45" value="     
+	<p><input type="text" name="Nom" class="obligatoire" required maxLength="45" value="
 EOF;
 echo $datas[0][0];
 echo <<<EOF
@@ -62,14 +62,14 @@ echo <<<EOF
 EOF;
 echo $datas[0][4];
 echo <<<EOF
-    "/></p></div>
+"/></p></div>
     <div>
 	<p>Numéros de sécurité sociale</p>
 	<p><input type="text" name="NumSecu" class="obligatoire" required minlength="16" maxLength="16" value="
 EOF;
 echo $datas[0][5];
 echo <<<EOF
-    "/></p></div>
+"/></p></div>
     <div>
 	<p><input name="bouton_valider" type="submit" value="Modifier les données" /></p>
     </div>

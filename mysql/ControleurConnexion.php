@@ -35,8 +35,8 @@ class ControleurConnexion
 		$t=!empty($table)?$table:Null;
 		$s=!empty($set)?$set:Null;
 		$w=!empty($where)?$where:Null;
-		$o=!empty($orderby)?$orderby:Null;
-		$l=!empty($limit)?$limit:Null;
+		$o=!empty($orderby)?$orderby:"";
+		$l=!empty($limit)?$limit:"";
 		$return_query = $data->query($t,$s,$w,$o,$l);
 		$data->destruction();
 		return $return_query;
