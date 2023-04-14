@@ -57,7 +57,7 @@ echo <<<EOF
     <div>
 	<p>Numéro de téléphone</p>
 	<p><input type="tel" name="Phone" class="obligatoire" required
-    pattern="[0]{1}[0-9]{1]-[0-9]{2}-[0-9]{2}-[0-9]{2}-[0-9]{2}"
+    pattern="^0[0-9]{9}$"
     value="
 EOF;
 echo $datas[0][4];
