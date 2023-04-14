@@ -19,6 +19,9 @@ echo <<< EOF
             </div>
             <p><input type="submit" name="btn_valider" value="Login"></p>
         </form>
+        <div>
+            <a href="register.html">Register</a>
+        </div>
     </body>
 </html>
 EOF;
