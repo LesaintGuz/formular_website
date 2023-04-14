@@ -3,6 +3,12 @@
 //echo " <div style=\"color:#ff00ff;\"> GET<pre>", print_r ( $_GET ), "</pre></div>";
 
 $Nom = isset ( $_GET ['Nom'] ) ? $_GET ['Nom'] : NULL;
+$Prenom = isset ( $_GET ['Prenom'] ) ? $_GET ['Prenom'] : NULL;
+$Adresse = isset ( $_GET ['Adresse'] ) ?_GET ['Adresse'] : NULL;
+$Phone = isset ( $_GET ['Phone'] ) ?_GET ['Phone'] : NULL;
+$Birthdate = isset ( $_GET ['Birthdate'] ) ?_GET ['Birthdate'] : NULL;
+$Mail = isset ( $_GET ['Mail'] ) ?_GET ['Mail'] : NULL;
+$NumSecu = isset ( $_GET ['NumSecu'] ) ?_GET ['NumSecu'] : NULL;
 if (!empty($Nom)){
 //include ('./mysql/ControleurConnexion.php');
 require_once ('../mysql/ControleurConnexion.php');
@@ -20,7 +26,7 @@ echo <<<EOF
 </head>
 <body>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Procyon_lotor_qtl2.jpg/800px-Procyon_lotor_qtl2.jpg">
-<div>Clément GOMEZ & Ulysse HAV֤E></div>
+<div>Clément GOMEZ & Ulysse HAV֤E</div>
 <div>Raccoon Kingdom</div>
 <div><img src="https://i.gifer.com/2rGa.gif"></div>
 <form action="p1.php" method="GET" enctype="application/x-www-form-urlencoded">
