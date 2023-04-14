@@ -17,7 +17,7 @@ CREATE TABLE test.userInfos (
   PRIMARY KEY(Id)
 );
 
-DROP TABLE IF EXISTS waintingUser;
+DROP TABLE IF EXISTS waitingUser;
 
 CREATE TABLE test.waitingUser (
   Id INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
