@@ -13,7 +13,7 @@ if (!empty($Nom)){
 //include ('./mysql/ControleurConnexion.php');
 require_once ('../mysql/ControleurConnexion.php');
 $connexion = new ControleurConnexion ();
-$connexion->inserer ( "userInfos", "Id,Nom,Prenom,Adresse,Birthdate,Phone,Mail,NumSecu", "NULL,'$Nom','$Prenom','$Adresse','$Phone','$Birthdate','$Mail','$NumSecu'" );
+$connexion->inserer ( "userInfos", "Id,Nom,Prenom,Adresse,Phone,BirthdateMail,NumSecu", "NULL,'$Nom','$Prenom','$Adresse','$Birthdate', '$Phone','$Mail','$NumSecu'" );
 }
 
 
