@@ -13,9 +13,13 @@ if (!empty($Nom)){
 //include ('./mysql/ControleurConnexion.php');
 require_once ('../mysql/ControleurConnexion.php');
 $connexion = new ControleurConnexion ();
-$connexion->inserer ( "userInfos", "Id,Nom,Prenom,Adresse,Phone,Birthdate,Mail,NumSecu", "NULL,'$Nom','$Prenom','$Adresse','$Birthdate', '$Phone','$Mail','$NumSecu'" );
+$connexion->inserer ( "userInfos", "Id,Nom,Prenom,Adresse,Birthdate,Phone,Mail,NumSecu", "NULL,'$Nom','$Prenom','$Adresse','$Birthdate', '$Phone','$Mail','$NumSecu'" );
 }
 
+
+require_once ('../mysql/ControleurConnexion.php');
+$con = new ControleurConnexion();
+$datas = $con->consulter('*', 'userInfos', '', '', '', '', '', '');
 
 echo <<<EOF
  <!DOCTYPE html>
@@ -30,9 +34,61 @@ echo <<<EOF
 <div>Raccoon Kingdom</div>
 <div><img src="https://i.gifer.com/2rGa.gif"></div>
 <div>
+<form action="updateDtb.php" method="POST">
 <table name="personalDataTable" id="personalDataTable">
-<td>Nom</td><td>Prenom</td><td>Adresse</td><td>Téléphone</td><td>Date de Naissance</td><td>Mail</td><td>Numéros de Sécurité Sociale</td>
+<thead><tr><td>Nom</td><td>Prenom</td><td>Adresse</td><td>Date de Naissance</td><td>Téléphone</td><td>Mail</td><td>Numéros de Sécurité Sociale</td>
+</tr></thead><tbody>
+EOF;
+foreach ($datas as $data){
+	echo <<<EOF
+	<tr><td>
+	<input type="hidden" name="id" value="
+	EOF;
+	echo $data[0];
+	echo <<<EOF
+	">
+	<input type="text" name="Nom" value="
+	EOF;
+	echo $data[1];
+	echo <<<EOF
+	"></td><td>
+	<input type="text" name="Prenom" value="
+	EOF;
+	echo $data[2];
+	echo <<<EOF
+	"></td><td>
+	<input type="text" name="Adresse" value="
+	EOF;
+	echo $data[3];
+	echo <<<EOF
+	"></td><td>
+	<input type="date" name="Birthdate" value="
+	EOF;
+	echo $data[4];
+	echo <<<EOF
+	"></td><td>
+	<input type="tel" name="Phone" value="
+	EOF;
+	echo $data[5];
+	echo <<<EOF
+	"></td><td>
+	<input type="email" name="Mail" value="
+	EOF;
+	echo $data[6];
+	echo <<<EOF
+	"></td><td>
+	<input type="text" name="NumSecu" value="
+	EOF;
+	echo $data[7];
+	echo <<<EOF
+	"></td>
+	</tr>
+	EOF;
+}
+echo <<<EOF
+</tbody>
 </table>
+</form>
 </div>
 
 <button type="button" onclick="changeAddFormVisibility();">+</button>
