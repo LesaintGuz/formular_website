@@ -20,6 +20,7 @@ echo <<<EOF
 </head>
 <body>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Procyon_lotor_qtl2.jpg/800px-Procyon_lotor_qtl2.jpg">
+<div>Clément GOMEZ & Ulysse HAV֤E></div>
 <div>Raccoon Kingdom</div>
 <div><img src="https://i.gifer.com/2rGa.gif"></div>
 <form action="index.php" method="GET" enctype="application/x-www-form-urlencoded">
