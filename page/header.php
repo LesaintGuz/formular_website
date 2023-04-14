@@ -29,7 +29,11 @@ echo <<<EOF
 <div>Clément GOMEZ & Ulysse HAV֤E</div>
 <div>Raccoon Kingdom</div>
 <div><img src="https://i.gifer.com/2rGa.gif"></div>
-
+<div>
+<table name="personalDataTable" id="personalDataTable">
+<td>Nom</td><td>Prenom</td><td>Adresse</td><td>Téléphone</td><td>Date de Naissance</td><td>Mail</td><td>Numéros de Sécurité Sociale</td>
+</table>
+</div>
 
 <button type="button" onclick="changeAddFormVisibility();">+</button>
 <div id='addBtn' hidden>
