@@ -4,11 +4,11 @@
 
 $Nom = isset ( $_GET ['Nom'] ) ? $_GET ['Nom'] : NULL;
 $Prenom = isset ( $_GET ['Prenom'] ) ? $_GET ['Prenom'] : NULL;
-$Adresse = isset ( $_GET ['Adresse'] ) ?_GET ['Adresse'] : NULL;
-$Phone = isset ( $_GET ['Phone'] ) ?_GET ['Phone'] : NULL;
-$Birthdate = isset ( $_GET ['Birthdate'] ) ?_GET ['Birthdate'] : NULL;
-$Mail = isset ( $_GET ['Mail'] ) ?_GET ['Mail'] : NULL;
-$NumSecu = isset ( $_GET ['NumSecu'] ) ?_GET ['NumSecu'] : NULL;
+$Adresse = isset ( $_GET ['Adresse'] ) ? $_GET ['Adresse'] : NULL;
+$Phone = isset ( $_GET ['Phone'] ) ? $_GET ['Phone'] : NULL;
+$Birthdate = isset ( $_GET ['Birthdate'] ) ? $_GET ['Birthdate'] : NULL;
+$Mail = isset ( $_GET ['Mail'] ) ? $_GET ['Mail'] : NULL;
+$NumSecu = isset ( $_GET ['NumSecu'] ) ? $_GET ['NumSecu'] : NULL;
 if (!empty($Nom)){
 //include ('./mysql/ControleurConnexion.php');
 require_once ('../mysql/ControleurConnexion.php');
