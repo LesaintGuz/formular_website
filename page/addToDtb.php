@@ -1,7 +1,10 @@
 <?php
 session_start();
 //echo " <div style=\"color:#ff00ff;\"> GET<pre>", print_r ( $_GET ), "</pre></div>";
-
+if(!isset($_SESSION['Id']) || empty($_SESSION['Id'])) {
+    include  'login.php' ;
+    die();
+}
 $Nom = isset ( $_POST ['Nom'] ) ? $_POST ['Nom'] : NULL;
 $Prenom = isset ( $_POST ['Prenom'] ) ? $_POST ['Prenom'] : NULL;
 $Adresse = isset ( $_POST ['Adresse'] ) ? $_POST ['Adresse'] : NULL;
@@ -14,4 +17,5 @@ $Id = $_SESSION["Id"][0];
 require_once ('../mysql/ControleurConnexion.php');
 $connexion = new ControleurConnexion ();
 $connexion->modifier ( "userInfos", 'Nom="' . $Nom . '" , Prenom="' . $Prenom . '" , Adresse="' . $Adresse . '" , Birthdate="' . $Birthdate . '" , Phone="' . $Phone . '" , Mail="ad@min.fr" , NumSecu="' . $NumSecu . '" , Mdp="123"', "Id='1'", NULL , NULL );
-include 'modifUserData.php';
+//include 'modifUserData.php';
+header("Location: modifUserData.php?modif=succeed");

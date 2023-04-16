@@ -1,5 +1,5 @@
 <?php
-
+session_abort();
 echo <<< EOF
 <!DOCTYPE html>
 <html>

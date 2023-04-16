@@ -12,14 +12,17 @@ require_once ('../mysql/ControleurConnexion.php');
 $con = new ControleurConnexion();
 
 $where = 'Mail ="' . $mail  . '" AND Mdp= "' . $pass . ' "';
-$datas = $con->consulter('*', 'userInfos', '', $where , '', '', '', '');
+$datas = $con->consulter('Id, Ad', 'userInfos', '', $where , '', '', '', '');
 
 if($datas != NULL){
-    $_SESSION["Id"] = $datas[0] ;
+    session_start();
+    $_SESSION["Id"] = $datas[0][0] ;
+    $_SESSION["Admin"] = $datas[0][1] ;
     include  'modifUserData.php' ;
     die();
 }else{
     include  'login.php' ;
+    echo $datas;
     die();
 }
 

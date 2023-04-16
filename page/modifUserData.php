@@ -1,8 +1,14 @@
 <?php
 session_start();
 //echo " <div style=\"color:#ff00ff;\"> GET<pre>", print_r ( $_GET ), "</pre></div>";
+
+if(!isset($_SESSION['Id']) || empty($_SESSION['Id'])) {
+    include 'login.php' ;
+    die();
+}
 require_once ('../mysql/ControleurConnexion.php');
-$Id = $_SESSION["Id"][0];
+$Id = $_SESSION["Id"];
+$Admin = $_SESSION["Admin"];
 $con = new ControleurConnexion();
 $datas = $con->consulter('Nom,Prenom,Adresse,Birthdate,Phone,NumSecu', 'userInfos', '', 'Id=' . $Id, '', '', '', '');
 
@@ -16,6 +22,18 @@ echo <<<EOF
 <body>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Procyon_lotor_qtl2.jpg/800px-Procyon_lotor_qtl2.jpg">
 <div>Clément GOMEZ & Ulysse HAV֤E</div>
+EOF;
+if($Admin == 1){
+    echo <<<EOF
+        <form action="validUserForm.php" method="POST" enctype="application/x-www-form-urlencoded">
+        <input type="submit" name="admin" value="Admin">
+        </form>
+    EOF;
+}else{
+echo $_SESSION["Admin"];
+    
+}
+echo <<<EOF
 <div>Raccoon Kingdom</div>
 <div><img src="https://i.gifer.com/2rGa.gif"></div>
 <div>
@@ -74,11 +92,6 @@ echo <<<EOF
 	<p><input name="bouton_valider" type="submit" value="Modifier les données" /></p>
     </div>
     <img src="https://media.tenor.com/NnvNNOXwE6cAAAAM/raccoon-gossip.gif">
-    <input type="hidden" name="Id" value="
-EOF;
-echo $Id;
-echo <<<EOF
-">
     </form>
     </div>
     </body>
