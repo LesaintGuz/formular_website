@@ -4,12 +4,22 @@ session_start();
 //echo " <div style=\"color:#ff00ff;\"> GET<pre>", print_r ( $_GET ), "</pre></div>";
 
 if(!isset($_SESSION['Id']) || empty($_SESSION['Id'] || $_SESSION["Admin"] != 1)) {
-    include 'login.php' ;
+    //include 'login.php' ;
+    header("Location: login.php");
     die();
 }
 require_once ('../mysql/ControleurConnexion.php');
 $con = new ControleurConnexion();
 $datas = $con->consulter('*', 'waitingUser', '', '', '', '', '', '');
+$delResult = NULL
+if(isset($_GET['delete'])){
+    $delResult = $_GET['delete'];
+}
+
+$addResult = NULL
+if(isset($_GET['add'])){
+    $addResult = $_GET['add'];
+}
 
 echo <<<EOF
  <!DOCTYPE html>
@@ -21,6 +31,28 @@ echo <<<EOF
 <body>
 <div>Clément GOMEZ & Ulysse HAV֤E</div>
 <div>Admin Kingdom</div>
+
+EOF;
+if($addResult != NULL){
+    if($addResult='succeed'){
+        echo <<<EOF
+        <div>
+        Utilisateur accepté
+        </div>
+        EOF;
+    }
+}
+
+if($delResult != NULL){
+    if($delResult='succeed'){
+        echo <<<EOF
+        <div>
+        Utilisateur refusé
+        </div>
+        EOF;
+    }
+}
+echo<<<EOF
 <form action="modifUserData.php" method="POST" enctype="application/x-www-form-urlencoded">
 <input type="submit" name="myDatas" value="Mes données">
 </form>

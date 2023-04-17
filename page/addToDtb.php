@@ -2,7 +2,8 @@
 session_start();
 //echo " <div style=\"color:#ff00ff;\"> GET<pre>", print_r ( $_GET ), "</pre></div>";
 if(!isset($_SESSION['Id']) || empty($_SESSION['Id'])) {
-    include  'login.php' ;
+    //include 'login.php' ;
+    header("Location: login.php");
     die();
 }
 $Nom = isset ( $_POST ['Nom'] ) ? $_POST ['Nom'] : NULL;

@@ -1,5 +1,4 @@
 <?php
-
 $mail = isset ( $_POST ['Username'] ) ? $_POST ['Username'] : NULL;
 $pass = isset ( $_POST ['Password'] ) ? $_POST ['Password'] : NULL;
 

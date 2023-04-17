@@ -1,4 +1,9 @@
 <?php
+if(!isset($_SESSION['Id']) || empty($_SESSION['Id'] || $_SESSION["Admin"] != 1)) {
+    //include 'login.php' ;
+    header("Location: login.php");
+    die();
+}
 
 $Id = isset ( $_POST ['Id'] ) ? $_POST ['Id'] : NULL;
 $Mail = isset ( $_POST ['Mail'] ) ? $_POST ['Mail'] : NULL;
@@ -11,4 +16,4 @@ $connexion->inserer("waitingUser", "Id, Mail, Mdp", $Id . ", " $Mail . ", " . $M
 $connexion->supprimer("waitingUser", "Id='" . $Id . "'");
 
 //include 'validUserForm.php';
-header("Location: validUserForm.php");
+header("Location: validUserForm.php?add=succeed");

@@ -3,7 +3,8 @@ session_start();
 //echo " <div style=\"color:#ff00ff;\"> GET<pre>", print_r ( $_GET ), "</pre></div>";
 
 if(!isset($_SESSION['Id']) || empty($_SESSION['Id'])) {
-    include 'login.php' ;
+    //include 'login.php' ;
+    header("Location: login.php");
     die();
 }
 require_once ('../mysql/ControleurConnexion.php');
@@ -11,6 +12,10 @@ $Id = $_SESSION["Id"];
 $Admin = $_SESSION["Admin"];
 $con = new ControleurConnexion();
 $datas = $con->consulter('Nom,Prenom,Adresse,Birthdate,Phone,NumSecu', 'userInfos', '', 'Id=' . $Id, '', '', '', '');
+$result = NULL;
+if(isset($_GET['modif'])){
+    $result = $_GET['modif'];
+}
 
 echo <<<EOF
  <!DOCTYPE html>
@@ -23,6 +28,14 @@ echo <<<EOF
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Procyon_lotor_qtl2.jpg/800px-Procyon_lotor_qtl2.jpg">
 <div>Clément GOMEZ & Ulysse HAV֤E</div>
 EOF;
+if($result != NULL){
+    if($result='succeed'){
+        echo <<<EOF
+        <div>Modifications enregistrées avec succès</div>
+        EOF;
+    }
+}
+
 if($Admin == 1){
     echo <<<EOF
         <form action="validUserForm.php" method="POST" enctype="application/x-www-form-urlencoded">
