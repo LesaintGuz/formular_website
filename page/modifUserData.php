@@ -148,7 +148,7 @@ echo <<<EOF
 EOF;
 echo $datas[0][3];
 echo <<<EOF
-"/></p>
+" min='1899-01-01' max='2007-12-12'/></p>
     </div>
     <div>
 	<p>Numéro de téléphone</p>
