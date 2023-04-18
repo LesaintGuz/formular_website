@@ -1,10 +1,10 @@
 
 <?php
-session_abort();
-$result = NULL;
-if(isset($_GET['result'])){
-    $result = $_GET['result'];
-}
+    session_abort();
+    $result = NULL;
+    if(isset($_GET['result'])){
+        $result = $_GET['result'];
+    }
 ?>
 
 <!DOCTYPE html>
@@ -23,15 +23,23 @@ if(isset($_GET['result'])){
                 if($result != NULL){
                     if($result == 'failed'){
                         echo <<<EOF
-                        <div>La combinaison e mail mot de passe est inconnue</div>
+                        <div id="popup1" class="overlay">
+                            <div class="popup">
+                                <h2>Here i am</h2>
+                                <a class="close" href="#">&times;</a>
+                                <div class="content">
+                                    Thank to pop me out of that button, but now i'm done so you can close this window.
+                                </div>
+                            </div>
+                        </div>
                         EOF;
                     }
                 }
                 ?>
             <form action="DoLoogin.php" method="post">
                 <div>
-                    <p>Username</p>
-                    <p><input type="text" name="Username" class="obligatoire" required maxLength="45"/></p>
+                    <p>E-mail</p>
+                    <p><input type="email" name="Username" class="obligatoire" required maxLength="45"/></p>
                 </div>
                 <div>
                     <p>Password</p>

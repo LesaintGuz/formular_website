@@ -3,31 +3,35 @@ $result = NULL;
 if(isset($_GET['result'])){
     $result = $_GET['result'];
 }
-echo <<<EOF
+?>
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="../CSS/Style.css">
-        <h1>Register</h1>
+        <link rel="icon" href="../CSS/logo/favicon.ico" type="image/ico">
     </head>
     <body>
-EOF;
-if($result != NULL){
-    if($result == "succeed"){
-    echo <<<EOF
-    <div>Demande d'inscription validée</div>
-    EOF;
-    }else if ($result == "fail"){
-        echo <<<EOF
-        <div>Ce mail est déjà utilisé</div>
-        EOF;
-    }
-}
-echo <<<EOF
+    <?php
+        if($result != NULL){
+            if($result == "succeed"){
+            echo <<<EOF
+            <div>Demande d'inscription validée</div>
+            EOF;
+            }else if ($result == "fail"){
+                echo <<<EOF
+                <div>Ce mail est déjà utilisé</div>
+                EOF;
+            }
+        }
+    ?>
+    <div class="BackIMG"></div>
+    <div class="imgTopLeft"></div>
+    <div class="WhiteBack">
+        <h1>Register</h1>
         <form action="register.php"  method="post">
             <div>
                 <p>E-Mail</p>
-                <p><input type="text" name="Mail" class="obligatoire" required maxLength="45"/></p>
+                <p><input type="email" name="Mail" class="obligatoire" required maxLength="45"/></p>
             </div>
             <div>
                 <p>Password</p>
@@ -38,6 +42,6 @@ echo <<<EOF
         <div>
             <a href="login.php">Login</a>
         </div>
+    </div>
     </body>
 </html>
-EOF;
