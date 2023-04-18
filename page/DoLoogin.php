@@ -10,10 +10,18 @@ if($mail == NULL || $pass == NULL){
 require_once ('../mysql/ControleurConnexion.php');
 $con = new ControleurConnexion();
 
-$where = 'Mail ="' . $mail  . '" AND Mdp= "' . $pass . ' "';
-$datas = $con->consulter('Id, Ad', 'userInfos', '', $where , '', '', '', '');
+$where = 'Mail ="' . $mail  . '"'; //AND Mdp= "' . password_hash($pass,  PASSWORD_DEFAULT) . ' "';
 
-if($datas != NULL){
+
+$datas = $con->consulter('Id, Ad, Mdp', 'userInfos', '', $where , '', '', '', '');
+
+if($datas == NULL){
+    header("Location: login.php?result=failed");
+    die();
+}
+
+
+if(password_verify($pass, explode('?', $datas[0][2])[1]) ){
     session_start();
     $_SESSION["Id"] = $datas[0][0] ;
     $_SESSION["Admin"] = $datas[0][1] ;
@@ -23,5 +31,3 @@ if($datas != NULL){
     header("Location: login.php?result=failed");
     die();
 }
-
-
