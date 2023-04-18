@@ -39,7 +39,7 @@
             <div>
                 <a href="paramForm.php">Paramètres</a>
                 <a href="login.php">Deconnexion</a>
-                
+                <a href="deleteAccount.php">Supprimer ses données</a>
                 
                 <?php
                     # into 
