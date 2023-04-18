@@ -1,29 +1,27 @@
 <?php
-session_start();
-//echo " <div style=\"color:#ff00ff;\"> GET<pre>", print_r ( $_GET ), "</pre></div>";
+    session_start();
+    //echo " <div style=\"color:#ff00ff;\"> GET<pre>", print_r ( $_GET ), "</pre></div>";
 
-if(!isset($_SESSION['Id']) || empty($_SESSION['Id'])) {
-    //include 'login.php' ;
-    header("Location: login.php");
-    die();
-}
-require_once ('../mysql/ControleurConnexion.php');
-$Id = $_SESSION["Id"];
-$Admin = $_SESSION["Admin"];
-$con = new ControleurConnexion();
-$datas = $con->consulter('Nom,Prenom,Adresse,Birthdate,Phone,NumSecu', 'userInfos', '', 'Id=' . $Id, '', '', '', '');
-$result = NULL;
-$adress = explode(';', $datas[0][2]);
-if(isset($_GET['modif'])){
-    $result = $_GET['modif'];
-}
+    if(!isset($_SESSION['Id']) || empty($_SESSION['Id'])) {
+        //include 'login.php' ;
+        header("Location: login.php");
+        die();
+    }
+    require_once ('../mysql/ControleurConnexion.php');
+    $Id = $_SESSION["Id"];
+    $Admin = $_SESSION["Admin"];
+    $con = new ControleurConnexion();
+    $datas = $con->consulter('Nom,Prenom,Adresse,Birthdate,Phone,NumSecu', 'userInfos', '', 'Id=' . $Id, '', '', '', '');
+    $result = NULL;
+    $adress = explode(';', $datas[0][2]);
+    if(isset($_GET['modif'])){
+        $result = $_GET['modif'];
+    }
 
-$adminDemandResult = NULL;
-if(isset($_GET['askAdmin'])){
-    $adminDemandResult = $_GET['askAdmin'];
-}
-
-
+    $adminDemandResult = NULL;
+    if(isset($_GET['askAdmin'])){
+        $adminDemandResult = $_GET['askAdmin'];
+    }
 ?>
 
 
