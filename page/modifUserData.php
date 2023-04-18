@@ -29,6 +29,7 @@ if(isset($_GET['askAdmin'])){
 
 <!DOCTYPE html>
 <html lang="fr">
+
     <head>
         <link rel="icon" href="../CSS/logo/favicon.ico" type="image/ico">
         <link rel="stylesheet" href="../CSS/Style.css">
@@ -90,7 +91,7 @@ if(isset($_GET['askAdmin'])){
 
                     <div>
                         <p>Date de naissance</p>
-                        <p><input type="date" name="Birthdate" class="obligatoire" required value="<?php echo $datas[0][3]; ?>"/></p>
+                        <p><input type="date" name="Birthdate" class="obligatoire" required value="<?php echo $datas[0][3]; ?>" min='1899-01-01' max='2007-12-12'/></p>
                     </div>
 
                     <div>
@@ -110,5 +111,3 @@ if(isset($_GET['askAdmin'])){
                 </form>
             </div>
         </body>
-
-

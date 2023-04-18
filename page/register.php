@@ -14,6 +14,7 @@ $where = 'Mail ="' . $mail  . '"';
 $waitingUsers = $con->consulter('Mail', 'waitingUser', '', $where , '', '', '', '');
 $users = $con->consulter('Mail', 'userInfos', '', $where , '', '', '', '');
 $mailAlreadyUsed = $waitingUsers != NULL || $users != NULL;
+$pass = password_hash($pass, $PASSWORD_DEFAULT);
 
 if($mailAlreadyUsed){
     header("Location: registerForm.php?result=fail");
