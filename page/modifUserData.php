@@ -13,6 +13,7 @@ $Admin = $_SESSION["Admin"];
 $con = new ControleurConnexion();
 $datas = $con->consulter('Nom,Prenom,Adresse,Birthdate,Phone,NumSecu', 'userInfos', '', 'Id=' . $Id, '', '', '', '');
 $result = NULL;
+$adress = explode(';', $datas[0][2]);
 if(isset($_GET['modif'])){
     $result = $_GET['modif'];
 }
@@ -119,21 +120,27 @@ echo <<<EOF
 	<p>Adresse</p>
 	<p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="
 EOF;
-echo explode(';', $datas[0][2])[0];
+if(isset($adress[0])){
+    echo $adress[0];
+}
 echo <<<EOF
 "/></p></div>
 <div>
 <p>Code Postal</p>
 <p><input type="text" name="Adresse2" class="obligatoire" required pattern="^[0-9]{5}$" value="
 EOF;
-echo explode(';', $datas[0][2])[1];
+if(isset($adress[1])){
+    echo $adress[1];
+}
 echo <<<EOF
 "/></p></div>
 <div>
 <p>Ville</p>
 <p><input type="text" name="Adresse3" class="obligatoire" required value="
 EOF;
-echo explode(';', $datas[0][2])[3];
+if(isset($adress[2])){
+    echo $adress[2];
+}
 echo <<<EOF
 "/></p></div>
     <div>
@@ -147,7 +154,6 @@ echo <<<EOF
     <div>
 	<p>Numéro de téléphone</p>
 	<p><input type="tel" name="Phone" class="obligatoire" required
-    pattern="^0[0-9]{9}$"
     value="
 EOF;
 echo $datas[0][4];

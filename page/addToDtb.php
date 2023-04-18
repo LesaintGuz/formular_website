@@ -8,7 +8,10 @@ if(!isset($_SESSION['Id']) || empty($_SESSION['Id'])) {
 }
 $Nom = isset ( $_POST ['Nom'] ) ? $_POST ['Nom'] : NULL;
 $Prenom = isset ( $_POST ['Prenom'] ) ? $_POST ['Prenom'] : NULL;
-$Adresse = isset ( $_POST ['Adresse'] ) ? $_POST ['Adresse'] : NULL;
+$Adresse1 = isset ( $_POST ['Adresse1'] ) ? $_POST ['Adresse1'] : NULL;
+$Adresse2 = isset ( $_POST ['Adresse2'] ) ? $_POST ['Adresse2'] : NULL;
+$Adresse3 = isset ( $_POST ['Adresse3'] ) ? $_POST ['Adresse3'] : NULL;
+$Adresse = $Adresse1 . ";" . $Adresse2 . ";" . $Adresse3;
 $Phone = isset ( $_POST ['Phone'] ) ? $_POST ['Phone'] : NULL;
 $Birthdate = isset ( $_POST ['Birthdate'] ) ? $_POST ['Birthdate'] : NULL;
 $NumSecu = isset ( $_POST ['NumSecu'] ) ? $_POST ['NumSecu'] : NULL;
