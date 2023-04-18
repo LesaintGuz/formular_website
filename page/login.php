@@ -16,6 +16,7 @@ if(isset($_GET['result'])){
 
     <body>
         <div class="BackIMG"></div>
+        <div class="imgTopLeft"></div>
         <div class="WhiteBack">
             <h1>Connexion</h1>
                 <?php

@@ -20,7 +20,7 @@ body{
     position: fixed;
     left: 0px;
     top: 0px;
-    z-index: -1;
+    z-index: 0;
     display: block;
     background-size: cover;
 
@@ -80,4 +80,25 @@ tbody{
     margin-right: 30%;
 
     z-index: 9999;
+}
+
+.imgTopLeft{
+    float: left;
+    background-image: url("./logo/FOXY-C.png");
+    
+    z-index: 9999;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    display: block;
+    background-size: cover;
+
+    /* Scale */
+    height: 100%;
+    width: 100%;
+    max-width: 275px;
+    max-height: 275px;
+
+    margin-top: 2%;
+    margin-left: 3%;
 }
