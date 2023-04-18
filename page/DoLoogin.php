@@ -21,7 +21,7 @@ if($datas == NULL){
 }
 
 
-if(password_verify($pass, explode('?', $datas[0][2])[1]) ){
+if(password_verify($pass, $datas[0][2]) ){
     session_start();
     $_SESSION["Id"] = $datas[0][0] ;
     $_SESSION["Admin"] = $datas[0][1] ;

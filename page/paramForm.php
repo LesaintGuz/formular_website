@@ -38,15 +38,6 @@ if($result != NULL){
     }
 }
 
-//TODO Check to implemant try to be admin
-/*if($adminDemandResult != NULL){
-    if($adminDemandResult == 'succeed'){
-        echo <<<EOF
-        <div>Demande de changement de rôle réussie</div>
-        EOF;
-    }
-}*/
-
 if($Admin == 1){
     echo <<<EOF
         <a href="validuserForm.php">Admin</a>

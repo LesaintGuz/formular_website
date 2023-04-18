@@ -48,6 +48,7 @@ echo <<<EOF
 <div>Clément GOMEZ & Ulysse HAV֤E</div>
 <a href="paramForm.php">Paramètres</a>
 <a href="login.php">Deconnexion</a>
+<a href="deleteAccount.php">Supprimer ses Données</a>
 EOF;
 if($result != NULL){
     if($result='succeed'){
