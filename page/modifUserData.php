@@ -117,9 +117,23 @@ echo <<<EOF
 </div>
 <div>
 	<p>Adresse</p>
-	<p><input type="text" name="Adresse" class="obligatoire" required maxLength="255" value="
+	<p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="
 EOF;
-echo $datas[0][2];
+echo explode(';', $datas[0][2])[0];
+echo <<<EOF
+"/></p></div>
+<div>
+<p>Code Postal</p>
+<p><input type="text" name="Adresse2" class="obligatoire" required pattern="^[0-9]{5}$" value="
+EOF;
+echo explode(';', $datas[0][2])[1];
+echo <<<EOF
+"/></p></div>
+<div>
+<p>Ville</p>
+<p><input type="text" name="Adresse3" class="obligatoire" required value="
+EOF;
+echo explode(';', $datas[0][2])[3];
 echo <<<EOF
 "/></p></div>
     <div>
