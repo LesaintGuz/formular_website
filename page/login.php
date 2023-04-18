@@ -5,22 +5,27 @@ echo <<< EOF
 <html>
     <head>
         <link rel="stylesheet" href="../CSS/Style.css">
-        <h1>Connexion</h1>
+        <link rel="icon" href="../CSS/logo/favicon.ico" type="image/ico">
     </head>
+
     <body>
-        <form action="DoLoogin.php" method="post">
+        <div class="BackIMG"></div>
+        <div class="WhiteBack">
+            <h1>Connexion</h1>
+            <form action="DoLoogin.php" method="post">
+                <div>
+                    <p>Username</p>
+                    <p><input type="text" name="Username" class="obligatoire" required maxLength="45"/></p>
+                </div>
+                <div>
+                    <p>Password</p>
+                    <p><input type="password" name="Password" class="obligatoire" required maxLength="45"/></p>
+                </div>
+                <p><input type="submit" name="btn_valider" value="Login"></p>
+            </form>
             <div>
-                <p>Username</p>
-                <p><input type="text" name="Username" class="obligatoire" required maxLength="45"/></p>
+                <a href="register.html">Register</a>
             </div>
-            <div>
-                <p>Password</p>
-                <p><input type="password" name="Password" class="obligatoire" required maxLength="45"/></p>
-            </div>
-            <p><input type="submit" name="btn_valider" value="Login"></p>
-        </form>
-        <div>
-            <a href="register.html">Register</a>
         </div>
     </body>
 </html>
