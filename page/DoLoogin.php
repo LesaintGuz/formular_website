@@ -25,7 +25,7 @@ if(password_verify($pass, explode('?', $datas[0][2])[1]) ){
     session_start();
     $_SESSION["Id"] = $datas[0][0] ;
     $_SESSION["Admin"] = $datas[0][1] ;
-    include  'modifUserData.php' ;
+    header("Location: modifUserData.php");
     die();
 }else{
     header("Location: login.php?result=failed");

@@ -23,154 +23,92 @@ if(isset($_GET['askAdmin'])){
     $adminDemandResult = $_GET['askAdmin'];
 }
 
-//TODO Check to implemant try to be admin
-/*function hasAlreadyDoneAdminDemand(){
-    $hasDoneDemand = false;
-    $con = new ControleurConnexion();
-    $waitingIds = $con->consulter('Id', 'waitingAdmin', '', '', '', '', '', '', '');
-    foreach($waitingIds as $waitingId){
-        if($_SESSION["Id"] == $waitingId[0]){
-            $hasDoneDemand = true;
-        }
-    }
-    return $hasDoneDemand;
-}*/
 
-echo <<<EOF
- <!DOCTYPE html>
+?>
+
+
+<!DOCTYPE html>
 <html lang="fr">
-<head>
-<meta charset="utf-8" />
-<title>Test SI</title>
-</head>
-<body>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Procyon_lotor_qtl2.jpg/800px-Procyon_lotor_qtl2.jpg">
-<div>Clément GOMEZ & Ulysse HAV֤E</div>
-<a href="paramForm.php">Paramètres</a>
-<a href="login.php">Deconnexion</a>
-EOF;
-if($result != NULL){
-    if($result='succeed'){
-        echo <<<EOF
-        <div>Modifications enregistrées avec succès</div>
-        EOF;
-    }
-}
+    <head>
+        <link rel="icon" href="../CSS/logo/favicon.ico" type="image/ico">
+        <link rel="stylesheet" href="../CSS/Style.css">
+        <meta charset="utf-8" />
+        <title>Test SI</title>
+    </head>
+    <body>
+        <!-- Head bar  -->
+            <div>
+                <a href="paramForm.php">Paramètres</a>
+                <a href="login.php">Deconnexion</a>
+                
+                
+                <?php
+                    # into 
+                    if($result != NULL){
+                        if($result='succeed'){
+                            echo <<<EOF
+                            <div>Modifications enregistrées avec succès</div>
+                            EOF;
+                        }
+                    }
 
-//TODO Check to implemant try to be admin
-/*if($adminDemandResult != NULL){
-    if($adminDemandResult == 'succeed'){
-        echo <<<EOF
-        <div>Demande de changement de rôle réussie</div>
-        EOF;
-    }
-}*/
+                    if($Admin == 1){
+                        echo <<<EOF
+                            <a href="validUserForm.php">Admin</a>
+                        EOF;
+                    }
+                ?>
+            </div>
+            <div>
+                <form action="addToDtb.php" method="POST" enctype="application/x-www-form-urlencoded">
 
-if($Admin == 1){
-    echo <<<EOF
-        <form action="validUserForm.php" method="POST" enctype="application/x-www-form-urlencoded">
-        <input type="submit" name="admin" value="Admin">
-        </form>
-    EOF;
-}else{
-//TODO Check to implemant try to be admin
-/*
-echo $_SESSION["Admin"];
-echo <<<EOF
-<form action="askForAdmin.php" method="POST" enctype="application/x-www-form-urlencoded">
-<input type="input" name="send" value="Devenir Admin"
-EOF;
-if(hasAlreadyDoneAdminDemand()){
-    echo <<<EOF
-     disabled
-    EOF;
-}
+                    <div>
+                        <input type="reset" value="Supprimer les modifications">
+                    </div>
+                    <div>
+                        <p>Nom</p>
+                        <p><input type="text" name="Nom" class="obligatoire" required maxLength="45" value=" <?php echo $datas[0][0]; ?> "/></p>  
+                    </div>
+                    <div>
+                        <p>Prenom</p>
+                        <p><input type="text" name="Prenom" class="obligatoire" required maxLength="45" value=" <?php echo $datas[0][1]; ?> "/></p>
+                    </div>
+                    <div>
+                        <p>Adresse</p>
+                        <p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value=" <?php if(isset($adress[0])){ echo $adress[0];} ?>"/></p>
+                    </div> 
 
-echo <<<EOF
->
-</form>
-EOF;*/
-}
+                    <div>
+                        <p>Code Postal</p>
+                        <p><input type="text" name="Adresse2" class="obligatoire" required pattern="^[0-9]{5}$" value=" <?php if(isset($adress[1])){  echo $adress[1];}?> "/></p>
+                    </div>
 
-echo <<<EOF
-<div>Raccoon Kingdom</div>
-<div><img src="https://i.gifer.com/2rGa.gif"></div>
-<div>
-<form action="addToDtb.php" method="POST" enctype="application/x-www-form-urlencoded">
-<div>
-    <input type="reset" value="Supprimer les modifications">
-</div>
-<div>
-	<p>Nom</p>
-	<p><input type="text" name="Nom" class="obligatoire" required maxLength="45" value="
-EOF;
-echo $datas[0][0];
-echo <<<EOF
-"/></p>
-</div>
-<div>
-	<p>Prenom</p>
-	<p><input type="text" name="Prenom" class="obligatoire" required maxLength="45" value="
-EOF;
-echo $datas[0][1];
-echo <<<EOF
-"/></p>
-</div>
-<div>
-	<p>Adresse</p>
-	<p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="
-EOF;
-if(isset($adress[0])){
-    echo $adress[0];
-}
-echo <<<EOF
-"/></p></div>
-<div>
-<p>Code Postal</p>
-<p><input type="text" name="Adresse2" class="obligatoire" required pattern="^[0-9]{5}$" value="
-EOF;
-if(isset($adress[1])){
-    echo $adress[1];
-}
-echo <<<EOF
-"/></p></div>
-<div>
-<p>Ville</p>
-<p><input type="text" name="Adresse3" class="obligatoire" required value="
-EOF;
-if(isset($adress[2])){
-    echo $adress[2];
-}
-echo <<<EOF
-"/></p></div>
-    <div>
-	<p>Date de naissance</p>
-	<p><input type="date" name="Birthdate" class="obligatoire" required value="
-EOF;
-echo $datas[0][3];
-echo <<<EOF
-"/></p>
-    </div>
-    <div>
-	<p>Numéro de téléphone</p>
-	<p><input type="tel" name="Phone" class="obligatoire" required
-    value="
-EOF;
-echo $datas[0][4];
-echo <<<EOF
-"/></p></div>
-    <div>
-	<p>Numéros de sécurité sociale</p>
-	<p><input type="text" name="NumSecu" class="obligatoire" required minlength="16" maxLength="16" value="
-EOF;
-echo $datas[0][5];
-echo <<<EOF
-"/></p></div>
-    <div>
-	<p><input name="bouton_valider" type="submit" value="Modifier les données" /></p>
-    </div>
-    <img src="https://media.tenor.com/NnvNNOXwE6cAAAAM/raccoon-gossip.gif">
-    </form>
-    </div>
-    </body>
-EOF;
+                    <div>
+                        <p>Ville</p>
+                        <p><input type="text" name="Adresse3" class="obligatoire" required value=" <?php if(isset($adress[2])){ echo $adress[2];} ?> "/></p>
+                    </div>
+
+                    <div>
+                        <p>Date de naissance</p>
+                        <p><input type="date" name="Birthdate" class="obligatoire" required value="<?php echo $datas[0][3]; ?>"/></p>
+                    </div>
+
+                    <div>
+                        <p>Numéro de téléphone</p>
+                        <p><input type="tel" name="Phone" class="obligatoire" required  value=" <?php echo $datas[0][4]; ?>"/></p>
+                    </div>
+
+                    <div>
+                        <p>Numéros de sécurité sociale</p>
+                        <p><input type="text" name="NumSecu" class="obligatoire" required minlength="16" maxLength="16" value=" <?php echo $datas[0][5]; ?> "/></p>
+                    </div>
+
+                    <div>
+                        <p><input name="bouton_valider" type="submit" value="Modifier les données" /></p>
+                    </div>
+                            
+                </form>
+            </div>
+        </body>
+
+
