@@ -17,6 +17,23 @@ if(isset($_GET['modif'])){
     $result = $_GET['modif'];
 }
 
+$adminDemandResult = NULL;
+if(isset($_GET['askAdmin'])){
+    $adminDemandResult = $_GET['askAdmin'];
+}
+
+function hasAlreadyDoneAdminDemand(){
+    $hasDoneDemand = false;
+    $con = new ControleurConnexion();
+    $waitingIds = $con->consulter('Id', 'waitingAdmin', '', '', '', '', '', '', '');
+    foreach($waitingIds as $waitingId){
+        if($_SESSION["Id"] == $waitingId[0]){
+            $hasDoneDemand = true;
+        }
+    }
+    return $hasDoneDemand;
+}
+
 echo <<<EOF
  <!DOCTYPE html>
 <html lang="fr">
@@ -36,6 +53,14 @@ if($result != NULL){
     }
 }
 
+if($adminDemandResult != NULL){
+    if($adminDemandResult == 'succeed'){
+        echo <<<EOF
+        <div>Demande de changement de rôle réussie</div>
+        EOF;
+    }
+}
+
 if($Admin == 1){
     echo <<<EOF
         <form action="validUserForm.php" method="POST" enctype="application/x-www-form-urlencoded">
@@ -44,8 +69,22 @@ if($Admin == 1){
     EOF;
 }else{
 echo $_SESSION["Admin"];
-    
+echo <<<EOF
+<form action="askForAdmin.php" method="POST" enctype="application/x-www-form-urlencoded">
+<input type="input" name="send" value="Devenir Admin"
+EOF;
+if(hasAlreadyDoneAdminDemand()){
+    echo <<<EOF
+     disabled
+    EOF;
 }
+
+echo <<<EOF
+>
+</form>
+EOF;
+}
+
 echo <<<EOF
 <div>Raccoon Kingdom</div>
 <div><img src="https://i.gifer.com/2rGa.gif"></div>

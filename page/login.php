@@ -20,7 +20,7 @@ echo <<< EOF
             <p><input type="submit" name="btn_valider" value="Login"></p>
         </form>
         <div>
-            <a href="register.html">Register</a>
+        <a href="registerForm.php">Register</a>
         </div>
     </body>
 </html>

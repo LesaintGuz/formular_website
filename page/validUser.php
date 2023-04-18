@@ -1,4 +1,5 @@
 <?php
+session_start();
 if(!isset($_SESSION['Id']) || empty($_SESSION['Id'] || $_SESSION["Admin"] != 1)) {
     //include 'login.php' ;
     header("Location: login.php");
