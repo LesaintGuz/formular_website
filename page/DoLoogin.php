@@ -20,8 +20,7 @@ if($datas != NULL){
     include  'modifUserData.php' ;
     die();
 }else{
-    include  'login.php' ;
-    echo $datas;
+    header("Location: login.php?result=failed");
     die();
 }
 

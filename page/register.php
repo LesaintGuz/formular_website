@@ -10,10 +10,19 @@ if($mail == NULL || $pass == NULL){
 
 require_once ('../mysql/ControleurConnexion.php');
 $con = new ControleurConnexion();
+$where = 'Mail ="' . $mail  . '"';
+$waitingUsers = $con->consulter('Mail', 'waitingUser', '', $where , '', '', '', '');
+$users = $con->consulter('Mail', 'userInfos', '', $where , '', '', '', '');
+$mailAlreadyUsed = $waitingUsers != NULL || $users != NULL;
+
+if($mailAlreadyUsed){
+    header("Location: registerForm.php?result=fail");
+    die();
+}
 
 $con->inserer ( "waitingUser", "Id,Mail,Mdp", " '','$mail','$pass'");
 
-include 'login.php';
+header("Location: registerForm.php?result=succeed");
 die();
 // sucess mess
 

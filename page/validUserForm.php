@@ -11,12 +11,12 @@ if(!isset($_SESSION['Id']) || empty($_SESSION['Id'] || $_SESSION["Admin"] != 1))
 require_once ('../mysql/ControleurConnexion.php');
 $con = new ControleurConnexion();
 $datas = $con->consulter('*', 'waitingUser', '', '', '', '', '', '');
-$delResult = NULL
+$delResult = NULL;
 if(isset($_GET['delete'])){
     $delResult = $_GET['delete'];
 }
 
-$addResult = NULL
+$addResult = NULL;
 if(isset($_GET['add'])){
     $addResult = $_GET['add'];
 }
@@ -31,7 +31,8 @@ echo <<<EOF
 <body>
 <div>Clément GOMEZ & Ulysse HAV֤E</div>
 <div>Admin Kingdom</div>
-
+<a href="paramForm.php">Paramètres</a>
+<a href="login.php">Deconnexion</a>
 EOF;
 if($addResult != NULL){
     if($addResult='succeed'){
@@ -64,11 +65,11 @@ foreach ($datas as $data){
 echo <<<EOF
     <tr>
             <td><form action="deleteWaitingUser.php" method="POST" enctype="application/x-www-form-urlencoded">
-        <input type="hidden" name="id" value="
+        <input type="hidden" name="Id" value="
 EOF;
 echo $data[0];
 echo <<<EOF
-        ">
+    ">
         <input type="submit" value="Supprimer">
         </form>
         </td>
@@ -78,7 +79,7 @@ echo <<<EOF
     EOF;
     echo $data[0];
     echo <<<EOF
-        ">
+    ">
         <Label>
     EOF;
     echo $data[0];
@@ -94,12 +95,14 @@ echo <<<EOF
     EOF;
     echo $data[1];
     echo <<<EOF
-        ">"
-        <input type="hidden" name="Mdp" value="
+    ">
+    <input type="hidden" name="Mdp" value="
     EOF;
     echo $data[2];
     echo <<<EOF
-        ">"
+    "></td><td>
+        <input type="checkBox" name="isAdmin">
+        </td><td>
         <input type="submit" value="valider">
         </td></form></tr>
     EOF;
