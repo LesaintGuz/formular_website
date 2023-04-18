@@ -16,6 +16,7 @@ echo <<<EOF
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Procyon_lotor_qtl2.jpg/800px-Procyon_lotor_qtl2.jpg">
 <div>Clément GOMEZ & Ulysse HAV֤E</div>
 <div>Raccoon Kingdom</div>
+<a href="paramForm.php">Paramètres</a>
 <div><img src="https://i.gifer.com/2rGa.gif"></div>
 <form action="updateDtb.php" method="POST">
 <input type="submit" value="Sauver les modifications">

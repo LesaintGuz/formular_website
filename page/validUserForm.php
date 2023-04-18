@@ -31,7 +31,8 @@ echo <<<EOF
 <body>
 <div>Clément GOMEZ & Ulysse HAV֤E</div>
 <div>Admin Kingdom</div>
-
+<a href="paramForm.php">Paramètres</a>
+<a href="login.php">Deconnexion</a>
 EOF;
 if($addResult != NULL){
     if($addResult='succeed'){

@@ -22,7 +22,8 @@ if(isset($_GET['askAdmin'])){
     $adminDemandResult = $_GET['askAdmin'];
 }
 
-function hasAlreadyDoneAdminDemand(){
+//TODO Check to implemant try to be admin
+/*function hasAlreadyDoneAdminDemand(){
     $hasDoneDemand = false;
     $con = new ControleurConnexion();
     $waitingIds = $con->consulter('Id', 'waitingAdmin', '', '', '', '', '', '', '');
@@ -32,7 +33,7 @@ function hasAlreadyDoneAdminDemand(){
         }
     }
     return $hasDoneDemand;
-}
+}*/
 
 echo <<<EOF
  <!DOCTYPE html>
@@ -44,6 +45,8 @@ echo <<<EOF
 <body>
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Procyon_lotor_qtl2.jpg/800px-Procyon_lotor_qtl2.jpg">
 <div>Clément GOMEZ & Ulysse HAV֤E</div>
+<a href="paramForm.php">Paramètres</a>
+<a href="login.php">Deconnexion</a>
 EOF;
 if($result != NULL){
     if($result='succeed'){
@@ -53,13 +56,14 @@ if($result != NULL){
     }
 }
 
-if($adminDemandResult != NULL){
+//TODO Check to implemant try to be admin
+/*if($adminDemandResult != NULL){
     if($adminDemandResult == 'succeed'){
         echo <<<EOF
         <div>Demande de changement de rôle réussie</div>
         EOF;
     }
-}
+}*/
 
 if($Admin == 1){
     echo <<<EOF
@@ -68,6 +72,8 @@ if($Admin == 1){
         </form>
     EOF;
 }else{
+//TODO Check to implemant try to be admin
+/*
 echo $_SESSION["Admin"];
 echo <<<EOF
 <form action="askForAdmin.php" method="POST" enctype="application/x-www-form-urlencoded">
@@ -82,7 +88,7 @@ if(hasAlreadyDoneAdminDemand()){
 echo <<<EOF
 >
 </form>
-EOF;
+EOF;*/
 }
 
 echo <<<EOF

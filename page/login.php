@@ -1,13 +1,27 @@
 <?php
 session_abort();
+$result = NULL;
+if(isset($_GET['result'])){
+    $result = $_GET['result'];
+}
 echo <<< EOF
-<!DOCTYPE html>
-<html>
+    <!DOCTYPE html>
+    <html>
     <head>
         <link rel="stylesheet" href="../CSS/Style.css">
         <h1>Connexion</h1>
     </head>
     <body>
+    EOF;
+if($result != NULL){
+    if($result == 'failed'){
+        echo <<<EOF
+        <div>La combinaison e mail mot de passe est inconnue</div>
+        EOF;
+    }
+}
+
+echo <<<EOF
         <form action="DoLoogin.php" method="post">
             <div>
                 <p>Username</p>
