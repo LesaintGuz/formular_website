@@ -18,6 +18,7 @@ CREATE TABLE test.userInfos (
 );
 
 INSERT INTO Test.userInfos VALUES ('','Admin', 'ad', '','2000-02-20','','ad@admin.fr','','﻿$2y$10$joEnEuXwzOAURwVZDcpcxOSeojPkmNQuJlih5hT7IxiEqNGdcUDgC',1);
+UPDATE `test`.`userInfos` SET `Mdp` = '$2y$10$joEnEuXwzOAURwVZDcpcxOSeojPkmNQuJlih5hT7IxiEqNGdcUDgC' WHERE (`Id` = '1');
 
 DROP TABLE IF EXISTS waitingUser;
 

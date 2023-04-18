@@ -29,8 +29,8 @@
 <html lang="fr">
 
     <head>
-        <link rel="icon" href="../CSS/logo/favicon.ico" type="image/ico">
         <link rel="stylesheet" href="../CSS/Style.css">
+        <link rel="icon" href="../CSS/logo/favicon.ico" type="image/ico">
         <meta charset="utf-8" />
         <title>Test SI</title>
     </head>
@@ -66,25 +66,25 @@
                     </div>
                     <div>
                         <p>Nom</p>
-                        <p><input type="text" name="Nom" class="obligatoire" required maxLength="45" value=" <?php echo $datas[0][0]; ?> "/></p>  
+                        <p><input type="text" name="Nom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][0]; ?>"/></p>  
                     </div>
                     <div>
                         <p>Prenom</p>
-                        <p><input type="text" name="Prenom" class="obligatoire" required maxLength="45" value=" <?php echo $datas[0][1]; ?> "/></p>
+                        <p><input type="text" name="Prenom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][1]; ?>"/></p>
                     </div>
                     <div>
                         <p>Adresse</p>
-                        <p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value=" <?php if(isset($adress[0])){ echo $adress[0];} ?>"/></p>
+                        <p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"/></p>
                     </div> 
 
                     <div>
                         <p>Code Postal</p>
-                        <p><input type="text" name="Adresse2" class="obligatoire" required pattern="^[0-9]{5}$" value=" <?php if(isset($adress[1])){  echo $adress[1];}?> "/></p>
+                        <p><input type="text" name="Adresse2" class="obligatoire" required pattern="^[0-9]{5}$" value="<?php if(isset($adress[1])){echo $adress[1];}?>"/></p>
                     </div>
 
                     <div>
                         <p>Ville</p>
-                        <p><input type="text" name="Adresse3" class="obligatoire" required value=" <?php if(isset($adress[2])){ echo $adress[2];} ?> "/></p>
+                        <p><input type="text" name="Adresse3" class="obligatoire" required value="<?php if(isset($adress[2])){echo $adress[2];} ?>"/></p>
                     </div>
 
                     <div>
@@ -94,12 +94,12 @@
 
                     <div>
                         <p>Numéro de téléphone</p>
-                        <p><input type="tel" name="Phone" class="obligatoire" required  value=" <?php echo $datas[0][4]; ?>"/></p>
+                        <p><input type="tel" name="Phone" class="obligatoire" required  value="<?php echo $datas[0][4]; ?>"/></p>
                     </div>
 
                     <div>
                         <p>Numéros de sécurité sociale</p>
-                        <p><input type="text" name="NumSecu" class="obligatoire" required minlength="16" maxLength="16" value=" <?php echo $datas[0][5]; ?> "/></p>
+                        <p><input type="text" name="NumSecu" class="obligatoire" required minlength="16" maxLength="16" value="<?php echo $datas[0][5]; ?>"/></p>
                     </div>
 
                     <div>
