@@ -68,9 +68,7 @@ if($result != NULL){
 
 if($Admin == 1){
     echo <<<EOF
-        <form action="validUserForm.php" method="POST" enctype="application/x-www-form-urlencoded">
-        <input type="submit" name="admin" value="Admin">
-        </form>
+    <a href="validuserForm.php">Admin</a>
     EOF;
 }else{
 //TODO Check to implemant try to be admin
