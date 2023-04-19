@@ -1,6 +1,6 @@
 
 <?php
-    session_abort();
+    session_destroy();
     $result = NULL;
     if(isset($_GET['result'])){
         $result = $_GET['result'];
