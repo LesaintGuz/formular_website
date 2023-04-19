@@ -30,13 +30,14 @@
 
     <head>
         <link rel="stylesheet" href="../CSS/Style.css">
-        <link rel="icon" href="../CSS/logo/favicon.ico" type="image/ico">
+        <link rel="icon" href="../CSS/logo/favicon.ico" type="image/ico"><link rel="stylesheet" href="../CSS/Style.css">
+        <link rel="stylesheet" href="../CSS/ModifStyle.css">
         <meta charset="utf-8" />
         <title>Test SI</title>
     </head>
     <body>
         <!-- Head bar  -->
-            <div>
+            <div class="HeadBar">
                 <a href="paramForm.php">Paramètres</a>
                 <a href="login.php">Deconnexion</a>
                 <a href="deleteAccount.php">Supprimer ses données</a>
@@ -58,7 +59,7 @@
                     }
                 ?>
             </div>
-            <div>
+            <div class="DataVisualizer">
                 <form action="addToDtb.php" method="POST" enctype="application/x-www-form-urlencoded">
 
                     <div>

@@ -34,39 +34,7 @@ body{
     filter: blur(5px);
 }
 
-table{
-    align-self: center;
-    margin-left: auto;
-    margin-right: auto;
 
-    border-collapse: collapse;
-    border: 2px solid black;
-}
-
-thead{
-
-}
-
-td,th {
-    text-align: center;
-    border: 2px solid black;
-    width: 30%;
-}
-
-/* <tr class="tr_h"> */
-#tr_h{
-   
-    
-}
-
-tbody{
-
-}
-
-/* <tr class="tr_b"> */ 
-#tr_b{
-    
-}
 
 .WhiteBack {
     float: left ;
@@ -79,14 +47,14 @@ tbody{
     margin-left: 40%;
     margin-right: 30%;
 
-    z-index: 9999;
+    z-index: 1;
 }
 
 .imgTopLeft{
     float: left;
     background-image: url("./logo/FOXY-C.png");
     
-    z-index: 9999;
+    z-index: 1;
     position: fixed;
     left: 0px;
     top: 0px;
@@ -102,50 +70,3 @@ tbody{
     margin-top: 2%;
     margin-left: 3%;
 }
-
-.overlay:target {
-    visibility: visible;
-    opacity: 1;
-  }
-  
-  .popup {
-    margin: 70px auto;
-    padding: 20px;
-    background: #fff;
-    border-radius: 5px;
-    width: 30%;
-    position: relative;
-    transition: all 5s ease-in-out;
-  }
-  
-  .popup h2 {
-    margin-top: 0;
-    color: #333;
-    font-family: Tahoma, Arial, sans-serif;
-  }
-  .popup .close {
-    position: absolute;
-    top: 20px;
-    right: 30px;
-    transition: all 200ms;
-    font-size: 30px;
-    font-weight: bold;
-    text-decoration: none;
-    color: #333;
-  }
-  .popup .close:hover {
-    color: #06D85F;
-  }
-  .popup .content {
-    max-height: 30%;
-    overflow: auto;
-  }
-  
-  @media screen and (max-width: 700px){
-    .box{
-      width: 70%;
-    }
-    .popup{
-      width: 70%;
-    }
-  }

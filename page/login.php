@@ -6,11 +6,11 @@
         $result = $_GET['result'];
     }
 ?>
-
 <!DOCTYPE html>
 <html>
     <head>
         <link rel="stylesheet" href="../CSS/Style.css">
+        <link rel="stylesheet" href="../CSS/PopUp.css">
         <link rel="icon" href="../CSS/logo/favicon.ico" type="image/ico">
     </head>
 
@@ -19,16 +19,7 @@
         <div class="imgTopLeft"></div>
         <div class="WhiteBack">
             <h1>Connexion</h1>
-                <?php
-                $message='Fail to connect';
-                if($result != NULL){
-                    if($result == 'failed'){
-                        echo <<<EOF
-                        <script type="text/javascript">window.alert("'.$message.'");</script>';
-                        EOF;
-                    }
-                }
-                ?>
+                
             <form action="DoLoogin.php" method="post">
                 <div>
                     <p>E-mail</p>
@@ -44,5 +35,18 @@
             <a href="registerForm.php">Register</a>
             </div>
         </div>
+        
     </body>
+    <?php
+            if($result != NULL){
+                if($result == 'failed'){
+                    echo <<<EOF
+                    <div class="AlertBox">
+                        <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                        Fail to connec ! Wrong Username or PassWord.
+                    </div>
+                    EOF;
+                }
+            }
+        ?>
 </html>

@@ -1,0 +1,75 @@
+
+.HeadBar{
+    margin-bottom: 5%;
+
+    border : 10px solid #F2C785 ;  
+    background-color: #ACB676;
+
+    border-radius: 2px;
+    padding: 2%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.HeadBar > a{
+    padding-left: 3% ;
+    padding-right: 3%;
+
+    margin-right: 2%;
+
+    text-decoration: none;
+    background-color: whitesmoke ;
+    text-align: center;
+    color: black;
+   
+    border-radius: 8px;
+    border: none;
+
+    
+}
+
+.DataVisualizer{
+
+}
+
+.ValidBtn{
+
+}
+
+.DelBtn{
+
+}
+
+table{
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+
+    border-collapse: collapse;
+    border: 2px solid black;
+}
+
+thead{
+
+}
+
+td,th {
+    text-align: center;
+    border: 2px solid black;
+    width: 30%;
+}
+
+/* <tr class="tr_h"> */
+#tr_h{
+   
+    
+}
+
+tbody{
+
+}
+
+/* <tr class="tr_b"> */ 
+#tr_b{
+    
+}

@@ -8,22 +8,10 @@ if(isset($_GET['result'])){
 <html>
     <head>
         <link rel="stylesheet" href="../CSS/Style.css">
+        <link rel="stylesheet" href="../CSS/PopUp.css">
         <link rel="icon" href="../CSS/logo/favicon.ico" type="image/ico">
     </head>
     <body>
-    <?php
-        if($result != NULL){
-            if($result == "succeed"){
-            echo <<<EOF
-            <div>Demande d'inscription validée</div>
-            EOF;
-            }else if ($result == "fail"){
-                echo <<<EOF
-                <div>Ce mail est déjà utilisé</div>
-                EOF;
-            }
-        }
-    ?>
     <div class="BackIMG"></div>
     <div class="imgTopLeft"></div>
     <div class="WhiteBack">
@@ -43,5 +31,27 @@ if(isset($_GET['result'])){
             <a href="login.php">Login</a>
         </div>
     </div>
+   
     </body>
+    
 </html>
+<?php
+        if($result != NULL){
+            if($result == "succeed"){
+                
+                echo <<<EOF
+                <div class="SucessBox">
+                    <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    Demande d'inscription validée
+                </div>
+                EOF;
+            }else if ($result == "fail"){
+                echo <<<EOF
+                <div class="AlertBox">
+                    <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    Ce mail est déjà utilisé
+                </div>
+                EOF;
+            }
+        }
+    ?>

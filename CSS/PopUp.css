@@ -1,0 +1,65 @@
+/* THE box message */
+.AlertBox{
+    background-color: #eb3f3f ;
+    color : white ;
+    padding: 35px;
+    padding-left: 90x;
+    padding-right: 30px;
+
+    
+    
+    z-index: 105;
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+
+    
+    
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    text-align: center;
+    margin-top: 35%;
+    
+    margin-left: 35.5%;
+    
+}
+
+.SucessBox{
+    background-color: #58e86e ;
+    color : black ;
+    padding: 35px;
+    padding-left: 90x;
+    padding-right: 30px;
+    
+    
+    z-index: 105;
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    margin-top: 35%;
+    /*margin-left: 37.5%;*/
+    text-align: center;
+    margin: auto;
+}
+
+/* The close button */
+.closeBtn{
+    margin-left: 15px;
+    color: white;
+    font-weight: bold;
+    float: right;
+    font-size: 22px;
+    line-height: 20px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* When moving the mouse over the close button */
+.closeBtn:hover {
+    color: black;
+  }
