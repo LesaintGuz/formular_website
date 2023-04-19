@@ -100,7 +100,7 @@
 
                     <div>
                         <p>Numéros de sécurité sociale</p>
-                        <p><input type="text" name="NumSecu" class="obligatoire" required minlength="16" maxLength="16" value="<?php echo $datas[0][5]; ?>"/></p>
+                        <p><input type="text" name="NumSecu" class="obligatoire" required minlength="16" maxLength="16" pattern="^[0-9]{16}$" value="<?php echo $datas[0][5]; ?>"/></p>
                     </div>
 
                     <div>

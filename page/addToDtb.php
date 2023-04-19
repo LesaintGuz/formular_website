@@ -22,4 +22,5 @@ require_once ('../mysql/ControleurConnexion.php');
 $connexion = new ControleurConnexion ();
 $connexion->modifier ( "userInfos", 'Nom="' . $Nom . '" , Prenom="' . $Prenom . '" , Adresse="' . $Adresse . '" , Birthdate="' . $Birthdate . '" , Phone="' . $Phone . '" , NumSecu="' . $NumSecu . '"', "Id='" . $Id . "'", NULL , NULL );
 //include 'modifUserData.php';
+include './dbSaver.php';
 header("Location: modifUserData.php?modif=succeed");
