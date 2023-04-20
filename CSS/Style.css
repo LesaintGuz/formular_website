@@ -1,12 +1,12 @@
 @font-face {
     font-family: ptarmi;
-    src: url(font/vikingsquad.ttf);
+    src: url(font/SF_electrotome_oblique.ttf);
 }
 
 * {
     font-family: 'ptarmi';
     text-align: center;
-    font-size: 105%;
+    font-size: 108%;
 }
 
 body{

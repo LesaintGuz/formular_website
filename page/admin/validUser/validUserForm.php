@@ -25,6 +25,7 @@ echo <<<EOF
  <!DOCTYPE html>
 <html lang="fr">
 <head>
+<link rel="stylesheet" href="../../../CSS/Style.css">
 <meta charset="utf-8" />
 <title>Admin</title>
 </head>
