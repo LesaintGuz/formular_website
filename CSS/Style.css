@@ -1,7 +1,6 @@
 @font-face {
     font-family: ptarmi;
     src: url(font/vikingsquad.ttf);
-    
 }
 
 * {
@@ -11,8 +10,8 @@
 }
 
 body{
-    padding-top: 2% ;
-    margin-top: 5%;
+    /*padding-top: 2% ;
+    margin-top: 5%;*/
 }
 
 .BackIMG{
@@ -48,6 +47,7 @@ body{
     
     border: 5px solid black;
     padding: 3%;
+    margin-top: 7%;
     margin-left: 40%;
     margin-right: 30%;
 

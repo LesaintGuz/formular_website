@@ -36,31 +36,34 @@
         <title> Modifications </title>
     </head>
 
-    <header>
-        <div class="HeadBar">
-            <a href="../modifParam/paramForm.php">Paramètres</a>
-            <a href="../login/loginForm.php">Deconnexion</a>
-            
-            <?php
-                # into 
-                if($result != NULL){
-                    if($result='succeed'){
-                        echo <<<EOF
-                        <div>Modifications enregistrées avec succès</div>
-                        EOF;
-                    }
-                }
-
-                if($Admin == 1){
-                    echo <<<EOF
-                        <a href="../admin/validUser/validUserForm.php">Admin</a>
-                    EOF;
-                }
-            ?>
-        </div>
-    </header>
+    
 
     <body>
+        <header>
+            <div class="headBarImg"></div>
+            <div class="HeadBar">
+               
+                
+                <?php
+                    # into 
+                    if($result != NULL){
+                        if($result='succeed'){
+                            echo <<<EOF
+                            <div>Modifications enregistrées avec succès</div>
+                            EOF;
+                        }
+                    }
+
+                    if($Admin == 1){
+                        echo <<<EOF
+                            <a href="../admin/validUser/validUserForm.php">Admin</a>
+                        EOF;
+                    }
+                ?>
+                <a href="../modifParam/paramForm.php">Paramètres</a>
+                <a href="../login/loginForm.php">Deconnexion</a>
+            </div>
+        </header>
         <div class="wallPaper"></div>
             <div class="DataVisualizer">
                 <form action="modifUser.php" method="POST" enctype="application/x-www-form-urlencoded">

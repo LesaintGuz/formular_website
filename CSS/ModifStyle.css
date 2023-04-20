@@ -14,22 +14,28 @@
 .HeadBar{
     margin-bottom: 5%;
 
-    border : 10px solid #F2C785 ;  
+    border :none; /*10px solid #F2C785 ;*/  
     background-color: #ACB676;
 
     border-radius: 2px;
     padding: 2%;
-    margin-left: 10%;
-    margin-right: 10%;
+
+    overflow: hidden;
+    position: fixed; /* Set the navbar to fixed position */
+    top: 0; 
+    left: 0;
+    width: 100%; /* Full width */
 
     z-index: 2;
 }
 
 .HeadBar > a{
+    top: 0;
+    margin-right: 2%;
+    margin-top: 0%;
+
     padding-left: 3% ;
     padding-right: 3%;
-
-    margin-right: 2%;
 
     text-decoration: none;
     background-color: whitesmoke ;
@@ -38,6 +44,28 @@
    
     border-radius: 8px;
     border: none;
+
+    font-size: 175%;
+}
+
+.headBarImg{
+    background-image: url("./logo/FOXY-C.png");
+    
+    z-index: 15;
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    display: block;
+    background-size: cover;
+
+    height: 100%;
+    width: 100%;
+    max-width: 125px;
+    max-height: 125px;
+
+    margin-top: 2%;
+    margin-left: 5%;
+
 }
 
 .DataVisualizer{
@@ -50,9 +78,12 @@
     padding: 3%;
     margin-left: 40%;
     margin-right: 30%;
+    margin-top: 7%;
 
     z-index: 3;
 }
+
+
 
 .ValidBtn{
 
@@ -62,6 +93,10 @@
 
 }
 
+
+
+
+/* TABLE */ 
 table{
     align-self: center;
     margin-left: auto;
