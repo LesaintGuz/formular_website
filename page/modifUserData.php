@@ -33,9 +33,10 @@
         <link rel="icon" href="../CSS/logo/favicon.ico" type="image/ico"><link rel="stylesheet" href="../CSS/Style.css">
         <link rel="stylesheet" href="../CSS/ModifStyle.css">
         <meta charset="utf-8" />
-        <title>Test SI</title>
+        <title> Modifications </title>
     </head>
     <body>
+        <div class="wallPaper"></div>
         <!-- Head bar  -->
             <div class="HeadBar">
                 <a href="paramForm.php">Paramètres</a>
@@ -100,7 +101,7 @@
 
                     <div>
                         <p>Numéros de sécurité sociale</p>
-                        <p><input type="text" name="NumSecu" class="obligatoire" required minlength="16" maxLength="16" pattern="^[0-9]{16}$" value="<?php echo $datas[0][5]; ?>"/></p>
+                        <p><input type="text" name="NumSecu" class="obligatoire" required minlength="15" maxLength="15" pattern="^[0-9]{15}$" value="<?php echo $datas[0][5]; ?>"/></p>
                     </div>
 
                     <div>
