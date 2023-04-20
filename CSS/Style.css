@@ -14,6 +14,10 @@ p {
     vertical-align: middle;
 }
 
+.Name 
+{
+    text-transform:capitalize;
+}
 
 body{
     /*padding-top: 2% ;
