@@ -23,7 +23,7 @@ if(isset($_GET['result'])){
             </div>
             <div>
                 <p>Mot de passe</p>
-                <p><input type="password" name="Password" class="obligatoire" required maxLength="45"/></p>
+                <p><input type="password" name="Password" class="obligatoire" required/></p>
             </div>
             <p><input type="submit" name="btn_valider" value="Register"></p>
         </form>
