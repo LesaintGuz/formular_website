@@ -47,6 +47,30 @@
     margin: auto;
 }
 
+.SucessBoxRight{
+    background-color: #58e86e ;
+    color : black ;
+    padding: 35px;
+    padding-left: 90x;
+    padding-right: 30px;
+    
+    
+    z-index: 105;
+    filter: blur(0px);
+    -webkit-filter: blur(0px);
+
+    position: absolute;
+    left: 0px;
+    top: 0px;
+
+    margin-top: 35%;
+    margin: auto;
+    margin-left: 70%;
+    text-align: center;
+    margin-top: 20%;
+    
+}
+
 .SucessBoxParam{
     background-color: #58e86e ;
     color : black ;
