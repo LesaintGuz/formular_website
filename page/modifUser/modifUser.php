@@ -17,7 +17,6 @@ $Birthdate = isset ( $_POST ['Birthdate'] ) ? $_POST ['Birthdate'] : NULL;
 $NumSecu = isset ( $_POST ['NumSecu'] ) ? $_POST ['NumSecu'] : NULL;
 $Id = $_SESSION["Id"];
 //$Id = isset ( $_POST ['Id'] ) ? $_POST ['Id'] : NULL;
-//include ('./mysql/ControleurConnexion.php');
 require_once ('../../mysql/ControleurConnexion.php');
 $connexion = new ControleurConnexion ();
 $connexion->modifier ( "userInfos", 'Nom="' . $Nom . '" , Prenom="' . $Prenom . '" , Adresse="' . $Adresse . '" , Birthdate="' . $Birthdate . '" , Phone="' . $Phone . '" , NumSecu="' . $NumSecu . '"', "Id='" . $Id . "'", NULL , NULL );

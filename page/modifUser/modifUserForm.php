@@ -75,12 +75,14 @@
                         <div class="AlignLeft">
                             <div class="HorizontalElement">
                                 <p>Nom</p>
-                                <p class="LongHorizontalInputFields"><input type="text" name="Nom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][0]; ?>" pattern="^[^0-9]+$"/></p>  
+                                <p class="LongHorizontalInputFields"><input type="text" name="Nom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][0]; ?>"
+                                 pattern='(?=^[^-].*[^-]$)(^[^0-9,(\);:!¨ /{}_<>`~"#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>  
                             </div>
 
                             <div class="HorizontalElement">
                                 <p>Prenom</p>
-                                <p class="LongHorizontalInputFields"><input type="text" name="Prenom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][1]; ?>" pattern="^[^0-9]+$"/></p>
+                                <p class="LongHorizontalInputFields"><input type="text" name="Prenom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][1]; ?>"
+                                pattern='(?=^[^-].*[^-]$)(^[^0-9,(\);:!¨ /{}_<>`~"#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>
                             </div>
                         </div>
                         <div>
@@ -103,7 +105,8 @@
                         <!-- location --> 
                         <div class="Location"> 
                             <p>Adresse</p>
-                            <p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"/></p>
+                            <p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"
+                            pattern='(?=^[^- ].*[^- ]$)(^[^;(\):!¨/{}_<>`~"#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>
 
                             <div class="AlignLeft">
                                 <div class="HorizontalElement">
