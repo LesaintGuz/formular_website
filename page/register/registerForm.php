@@ -25,7 +25,7 @@ if(isset($_GET['result'])){
                 <p>Mot de passe</p>
                 <p><input type="password" name="Password" class="obligatoire" required/></p>
             </div>
-            <p><input type="submit" name="btn_valider" value="Register"></p>
+            <p><input type="submit" name="btn_valider" value="Valider"></p>
         </form>
         <div>
             <a href="../login/loginForm.php">J'ai déjà un compte</a>

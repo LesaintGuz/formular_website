@@ -9,6 +9,12 @@
     font-size: 108%;
 }
 
+p {
+    margin-top: 0%;
+    vertical-align: middle;
+}
+
+
 body{
     /*padding-top: 2% ;
     margin-top: 5%;*/

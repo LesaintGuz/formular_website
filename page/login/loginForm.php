@@ -46,7 +46,7 @@
                     echo <<<EOF
                     <div class="AlertBox">
                         <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                        Échec de la connexion, la combinaison email mot de passe est inconnu
+                        Échec de la connexion, la combinaison email mot de passe est inconnue
                     </div>
                     EOF;
                 }else if($result == 'succeed'){

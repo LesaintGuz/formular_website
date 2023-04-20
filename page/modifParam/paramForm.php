@@ -68,8 +68,8 @@ if(isset($_GET['modif'])){
 	        <p><input type="text" name="Mdp" class="obligatoire" required value="xxxx"/></p>
         </div>
         <div class="AlignLeft">
-            <p><input type="reset" value="Supprimer les modifications"></p>
-	        <p><input name="validate" type="submit" value="Modifier les paramètres" /></p>
+            <p class="HorizontalElement"><input type="reset" value="Supprimer les modifications"></p>
+	        <p class="HorizontalElement"><input name="validate" type="submit" value="Modifier les paramètres" /></p>
         </div>
     </form>
     </div>

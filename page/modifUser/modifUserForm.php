@@ -73,31 +73,27 @@
                     
                     <div class="InfoPersonne">
                         <div class="AlignLeft">
-                            <div>
+                            <div class="HorizontalElement">
                                 <p>Nom</p>
-                                <p><input type="text" name="Nom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][0]; ?>" pattern="^[^0-9]+$"/></p>  
+                                <p class="LongHorizontalInputFields"><input type="text" name="Nom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][0]; ?>" pattern="^[^0-9]+$"/></p>  
                             </div>
 
-                            <div>
+                            <div class="HorizontalElement">
                                 <p>Prenom</p>
-                                <p><input type="text" name="Prenom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][1]; ?>" pattern="^[^0-9]+$"/></p>
-                            </div>
-
-                            <div>
-                                <p>Date de naissance</p>
-                                <p><input type="date" name="Birthdate" class="obligatoire" required value="<?php echo $datas[0][3]; ?>" min='1899-01-01' max='2007-12-12'/></p>
+                                <p class="LongHorizontalInputFields"><input type="text" name="Prenom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][1]; ?>" pattern="^[^0-9]+$"/></p>
                             </div>
                         </div>
-
-                        <br>
-
+                        <div>
+                            <p>Date de naissance</p>
+                            <p><input type="date" name="Birthdate" class="obligatoire" required value="<?php echo $datas[0][3]; ?>" min='1899-01-01' max='2007-12-12'/></p>
+                        </div>
                         <div class="AlignLeft"> 
-                            <div>
+                            <div class="HorizontalElement">
                                 <p>Numéro de téléphone</p>
                                 <p><input type="tel" name="Phone" class="obligatoire" required  value="<?php echo $datas[0][4]; ?>" size="10" pattern="^[0-9]{10}$"/></p>
                             </div>
 
-                            <div>
+                            <div class="HorizontalElement">
                                 <p>Numéros de sécurité sociale</p>
                                 <p><input type="text" name="NumSecu" class="obligatoire" required size="15" pattern="^[0-9]{15}$" value="<?php echo $datas[0][5]; ?>"/></p>
                             </div>
@@ -106,18 +102,16 @@
 
                         <!-- location --> 
                         <div class="Location"> 
-                            <div class="AlignLeft">
-                                <p>Adresse</p>
-                                <p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"/></p>
-                            </div> 
+                            <p>Adresse</p>
+                            <p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"/></p>
 
                             <div class="AlignLeft">
-                                <div>
+                                <div class="HorizontalElement">
                                     <p>Code Postal</p>
                                     <p><input type="text" name="Adresse2" class="obligatoire" size="5" required pattern="^[0-9]{5}$" value="<?php if(isset($adress[1])){echo $adress[1];}?>"/></p>
                                 </div>
 
-                                <div>
+                                <div class="HorizontalElement">
                                     <p>Ville</p>
                                     <p><input type="text" name="Adresse3" class="obligatoire" required value="<?php if(isset($adress[2])){echo $adress[2];} ?>" pattern="^[^0-9]+$"/></p>
                                 </div>
@@ -125,18 +119,19 @@
                         </div>
                         
 
-                        <div class="BTN_zone"> <!-- BTN -->
-                            <div>
-                                <input class="ResetBtn" type="reset" value="Supprimer les modifications">
+                        <div class="AlignLeft"> <!-- BTN -->
+                            <div class="HorizontalElement">
+                                <p class="CenterVertically"><input class="ResetBtn" type="reset" value="Supprimer les modifications"></p>
                             </div>
 
-                            <div>
-                                <p><input class="ValidBtn" name="bouton_valider" type="submit" value="Modifier les données" /></p>
-                            </div> 
-
-                            <div> <!-- nuke_btn --> 
+                            <div class="HorizontalElement"> <!-- nuke_btn --> 
                                 <a class="DelBtn" href="deleteAccount.php">Supprimer ses données</a>
                             </div>
+
+                            <div class="HorizontalElement">
+                                <p class="CenterVertically"><input class="ValidBtn" name="bouton_valider" type="submit" value="Modifier les données" /></p>
+                            </div> 
+
                         </div>  
                 </form>
             </div>

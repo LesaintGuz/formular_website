@@ -121,14 +121,29 @@
     display: block;
     margin-bottom: 2%;
     margin-top: 2%;
-
-    padding-left: 3% ;
-    padding-right: 3%;
 }
 
 .AlignLeft {
-   display: flexbox ; /* ruby-base-container*/
-   
+   /*display: flexbox ; /* ruby-base-container*/
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.HorizontalElement{
+  margin-left: 2%;
+  margin-right: 2%;
+}
+
+.LongHorizontalInputFields{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.CenterVertically{
+    position:relative;
+    top: 10;
 }
 
 .Location{
