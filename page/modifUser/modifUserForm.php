@@ -64,7 +64,7 @@
         <div class="wallPaper"></div>
             <div class="DataVisualizer">
                 <form action="addToDtb.php" method="POST" enctype="application/x-www-form-urlencoded">
-                    <div><!-- info personne -->
+                    <div class=""><!-- info personne -->
                         <div>
                             <p>Nom</p>
                             <p><input type="text" name="Nom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][0]; ?>"/></p>  

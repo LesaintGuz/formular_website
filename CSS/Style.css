@@ -1,6 +1,8 @@
 @font-face {
     font-family: ptarmi;
-    src: url(font/Roblox_Font_Regular.ttf);
+    src: url(font/vikingsquad.ttf);
+    font-size: 300%;
+    
 }
 
 * {
