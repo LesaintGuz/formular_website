@@ -59,7 +59,7 @@ echo <<<EOF
 </div>
 <div>
 	<p>Mot de passe</p>
-	<p><input type="text" name="Mdp" class="obligatoire" required maxLength="45" value="xxxx"/></p>
+	<p><input type="text" name="Mdp" class="obligatoire" required value="xxxx"/></p>
 </div>
 <div>
 	<p><input name="validate" type="submit" value="Modifier les paramètres" /></p>
