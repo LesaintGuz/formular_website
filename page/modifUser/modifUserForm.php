@@ -42,8 +42,6 @@
         <header>
             <div class="headBarImg"></div>
             <div class="HeadBar">
-               
-                
                 <?php
                     # into 
                     if($result != NULL){
@@ -67,7 +65,8 @@
         <div class="wallPaper"></div>
             <div class="DataVisualizer">
                 <form action="modifUser.php" method="POST" enctype="application/x-www-form-urlencoded">
-                    <div class="InfoPersonne"><!-- info personne -->
+                    
+                    <div class="InfoPersonne">
                         <div class="AlignLeft">
                             <div>
                                 <p>Nom</p>
@@ -90,48 +89,50 @@
                         <div class="AlignLeft"> 
                             <div>
                                 <p>Numéro de téléphone</p>
-                                <p><input type="tel" name="Phone" class="obligatoire" required  value="<?php echo $datas[0][4]; ?>" maxLength="10" pattern="^[0-9]{10}$"/></p>
+                                <p><input type="tel" name="Phone" class="obligatoire" required  value="<?php echo $datas[0][4]; ?>" size="10" pattern="^[0-9]{10}$"/></p>
                             </div>
 
                             <div>
                                 <p>Numéros de sécurité sociale</p>
-                                <p><input type="text" name="NumSecu" class="obligatoire" required maxLength="15" pattern="^[0-9]{15}$" value="<?php echo $datas[0][5]; ?>"/></p>
+                                <p><input type="text" name="NumSecu" class="obligatoire" required size="15" pattern="^[0-9]{15}$" value="<?php echo $datas[0][5]; ?>"/></p>
                             </div>
-                        <div>
-                    
+                        </div>
                     </div>
-                    
 
-                    <div class="Location"> <!-- location --> 
-                        <div>
-                            <p>Adresse</p>
-                            <p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"/></p>
-                        </div> 
+                        <!-- location --> 
+                        <div class="Location"> 
+                            <div class="AlignLeft">
+                                <p>Adresse</p>
+                                <p><input type="text" name="Adresse1" class="obligatoire" required size="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"/></p>
+                            </div> 
 
-                        <div>
-                            <p>Code Postal</p>
-                            <p><input type="text" name="Adresse2" class="obligatoire" required pattern="^[0-9]{5}$" value="<?php if(isset($adress[1])){echo $adress[1];}?>"/></p>
+                            <div class="AlignLeft">
+                                <div>
+                                    <p>Code Postal</p>
+                                    <p><input type="text" name="Adresse2" class="obligatoire" size="5" required pattern="^[0-9]{5}$" value="<?php if(isset($adress[1])){echo $adress[1];}?>"/></p>
+                                </div>
+
+                                <div>
+                                    <p>Ville</p>
+                                    <p><input type="text" name="Adresse3" class="obligatoire" required value="<?php if(isset($adress[2])){echo $adress[2];} ?>" pattern="^[^0-9]+$"/></p>
+                                </div>
+                            </div>
                         </div>
+                        
 
-                        <div>
-                            <p>Ville</p>
-                            <p><input type="text" name="Adresse3" class="obligatoire" required value="<?php if(isset($adress[2])){echo $adress[2];} ?>" pattern="^[^0-9]+$"/></p>
-                        </div>
-                    <div>
+                        <div class="BTN_zone"> <!-- BTN -->
+                            <div>
+                                <input class="ResetBtn" type="reset" value="Supprimer les modifications">
+                            </div>
 
-                    <div class="BTN_zone"> <!-- BTN -->
-                        <div>
-                            <input type="reset" value="Supprimer les modifications">
-                        </div>
+                            <div>
+                                <p><input class="ValidBtn" name="bouton_valider" type="submit" value="Modifier les données" /></p>
+                            </div> 
 
-                        <div>
-                            <p><input name="bouton_valider" type="submit" value="Modifier les données" /></p>
-                        </div> 
-
-                        <div> <!-- nuke_btn --> 
-                            <a href="deleteAccount.php">Supprimer ses données</a>
-                        </div>
-                    </div>  
+                            <div> <!-- nuke_btn --> 
+                                <a class="DelBtn" href="deleteAccount.php">Supprimer ses données</a>
+                            </div>
+                        </div>  
                 </form>
             </div>
         </body>

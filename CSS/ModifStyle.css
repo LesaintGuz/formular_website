@@ -81,32 +81,81 @@
     margin-left: 27%;
     margin-top: 7%;
 
+    
+
     z-index: 3;
 }
 
 .InfoPersonne{
+    background-color:#F2C785 ;
+    border: black 5px solid;
+    border-radius: 8px;
+
+
     display: block;
+    margin-bottom: 2%;
+    margin-top: 2%;
+
+    padding-left: 3% ;
+    padding-right: 3%;
 }
 
 .AlignLeft {
-   display: flex ; /* ruby-base-container*/
+   display: flexbox ; /* ruby-base-container*/
+   
 }
 
 .Location{
+    background-color:  #F2C785;
+    border: black 5px solid;
+    display: block;
 
+    display: block;
+    margin-bottom: 2%;
+    margin-top: 2%;
+
+    padding-left: 3% ;
+    padding-right: 3%;
 }
 
 .BTN_zone{
-
+   
 }
 
+.ResetBtn{
+  background-color: #7a7a7a; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 8px;
+}
 
 .ValidBtn{
-
+    background-color: #4caa4f; 
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  border-radius: 8px;
 }
 
 .DelBtn{
-
+    background-color: rgb(219, 56, 56);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 20px;
+    border-radius: 8px;
 }
 
 
