@@ -32,6 +32,7 @@
         <link rel="stylesheet" href="../../CSS/Style.css">
         <link rel="icon" href="../../CSS/logo/favicon.ico" type="image/ico"><link rel="stylesheet" href="../../CSS/Style.css">
         <link rel="stylesheet" href="../../CSS/ModifStyle.css">
+        <link rel="stylesheet" href="../../CSS/PopUp.css">
         <meta charset="utf-8" />
         <title> Modifications </title>
     </head>
@@ -44,14 +45,6 @@
             <div class="HeadBar">
                 <?php
                     # into 
-                    if($result != NULL){
-                        if($result='succeed'){
-                            echo <<<EOF
-                            <div>Modifications enregistrées avec succès</div>
-                            EOF;
-                        }
-                    }
-
                     if($Admin == 1){
                         echo <<<EOF
                             <a href="../admin/validUser/validUserForm.php">Admin</a>
@@ -64,6 +57,18 @@
         </header>
         <div class="wallPaper"></div>
             <div class="DataVisualizer">
+                <?php
+                     if($result != NULL){
+                        if($result='succeed'){
+                            echo <<<EOF
+                            <div class="SucessBoxParam">
+                                <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                Modifications enregistrées avec succès
+                            </div>
+                            EOF;
+                        }
+                    }
+                ?>
                 <form action="modifUser.php" method="POST" enctype="application/x-www-form-urlencoded">
                     
                     <div class="InfoPersonne">
@@ -103,7 +108,7 @@
                         <div class="Location"> 
                             <div class="AlignLeft">
                                 <p>Adresse</p>
-                                <p><input type="text" name="Adresse1" class="obligatoire" required size="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"/></p>
+                                <p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"/></p>
                             </div> 
 
                             <div class="AlignLeft">
