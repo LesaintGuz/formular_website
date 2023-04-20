@@ -24,27 +24,17 @@ if(isset($_GET['modif'])){
         <link rel="stylesheet" href="../../CSS/Style.css">
         <link rel="icon" href="../../CSS/logo/favicon.ico" type="image/ico"><link rel="stylesheet" href="../../CSS/Style.css">
         <link rel="stylesheet" href="../../CSS/ModifStyle.css">
+        <link rel="stylesheet" href="../../CSS/PopUp.css">
         <meta charset="utf-8" />
         <title> Paramètres </title>
 </head>
 <body>
     <div class="WallpaperTank"></div>
-
     <header>
         <div class="headBarImg"></div>
-        <div class="HeadBar">
-               
-                
+        <div class="HeadBar">                
             <?php
                 # into 
-                if($result != NULL){
-                    if($result='succeed'){
-                        echo <<<EOF
-                        div>Modifications enregistrées avec succès</div>
-                        EOF;
-                    }
-                }
-
                 if($Admin == 1){
                     echo <<<EOF
                         <a href="../admin/validUser/validUserForm.php">Admin</a>
@@ -56,6 +46,18 @@ if(isset($_GET['modif'])){
         </div>
     </header>
     <div class="Datavisualizer">
+    <?php
+    if($result != NULL){
+        if($result='succeed'){
+            echo <<<EOF
+            <div class="SucessBoxParam">
+            <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            Modifications enregistrées avec succès
+            </div>
+            EOF;
+        }
+    }
+    ?>
     <form action="modifParam.php" method="POST" enctype="application/x-www-form-urlencoded">
         <div>
 	        <p>E-Mail</p>
@@ -72,3 +74,4 @@ if(isset($_GET['modif'])){
     </form>
     </div>
 </body>
+

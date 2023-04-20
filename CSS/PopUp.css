@@ -47,6 +47,16 @@
     margin: auto;
 }
 
+.SucessBoxParam{
+    background-color: #58e86e ;
+    color : black ;
+    padding: 5%;
+
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+}
+
 /* The close button */
 .closeBtn{
     margin-left: 15px;
