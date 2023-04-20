@@ -11,6 +11,19 @@
     height: 100%;
 }
 
+.WallPaperTank{
+    background-image: url("Fond/Tank.jpg");
+    position: fixed;
+    top: -20%;
+    left: 0px;
+    z-index: -1;
+    display: block;
+    background-size: cover;
+
+    width: 100%;
+    height: 120%;
+}
+
 .HeadBar{
     margin-bottom: 5%;
 

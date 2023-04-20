@@ -16,55 +16,59 @@ $result = NULL;
 if(isset($_GET['modif'])){
     $result = $_GET['modif'];
 }
+?>
 
-echo <<<EOF
  <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8" />
-<title>Paramètres</title>
+        <link rel="stylesheet" href="../../CSS/Style.css">
+        <link rel="icon" href="../../CSS/logo/favicon.ico" type="image/ico"><link rel="stylesheet" href="../../CSS/Style.css">
+        <link rel="stylesheet" href="../../CSS/ModifStyle.css">
+        <meta charset="utf-8" />
+        <title> Paramètres </title>
 </head>
 <body>
-<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Procyon_lotor_qtl2.jpg/800px-Procyon_lotor_qtl2.jpg">
-<div>Clément GOMEZ & Ulysse HAV֤E</div>
-<a href="../modifUser/modifUserForm.php">formulaire</a>
-<a href="../login/loginForm.php">Deconnexion</a>
-EOF;
-if($result != NULL){
-    if($result='succeed'){
-        echo <<<EOF
-        <div>Modifications enregistrées avec succès</div>
-        EOF;
-    }
-}
+    <div class="WallpaperTank"></div>
 
-if($Admin == 1){
-    echo <<<EOF
-        <a href="../admin/validUser/validuserForm.php">Admin</a>
-    EOF;
-}
+    <header>
+        <div class="headBarImg"></div>
+        <div class="HeadBar">
+               
+                
+            <?php
+                # into 
+                if($result != NULL){
+                    if($result='succeed'){
+                        echo <<<EOF
+                        div>Modifications enregistrées avec succès</div>
+                        EOF;
+                    }
+                }
 
-echo <<<EOF
-<form action="modifParam.php" method="POST" enctype="application/x-www-form-urlencoded">
-<div>
-    <input type="reset" value="Supprimer les modifications">
-</div>
-<div>
-	<p>E-Mail</p>
-	<p><input type="email" name="Mail" class="obligatoire" required maxLength="45" value="
-EOF;
-echo $datas[0][0];
-echo <<<EOF
-"/></p>
-</div>
-<div>
-	<p>Mot de passe</p>
-	<p><input type="text" name="Mdp" class="obligatoire" required value="xxxx"/></p>
-</div>
-<div>
-	<p><input name="validate" type="submit" value="Modifier les paramètres" /></p>
-    </div>
+                if($Admin == 1){
+                    echo <<<EOF
+                        <a href="../admin/validUser/validUserForm.php">Admin</a>
+                    EOF;
+                }
+            ?>
+            <a href="../modifUser/modifUserForm.php">Mes données</a>
+            <a href="../login/loginForm.php">Deconnexion</a>
+        </div>
+    </header>
+    <div class="Datavisualizer">
+    <form action="modifParam.php" method="POST" enctype="application/x-www-form-urlencoded">
+        <div>
+	        <p>E-Mail</p>
+	        <p><input type="email" name="Mail" class="obligatoire" required maxLength="45" value="<?php $datas[0][0]; ?>"/></p>
+        </div>
+        <div>
+	        <p>Mot de passe</p>
+	        <p><input type="text" name="Mdp" class="obligatoire" required value="xxxx"/></p>
+        </div>
+        <div class="AlignLeft">
+            <p><input type="reset" value="Supprimer les modifications"></p>
+	        <p><input name="validate" type="submit" value="Modifier les paramètres" /></p>
+        </div>
     </form>
     </div>
-    </body>
-EOF;
+</body>
