@@ -59,7 +59,7 @@ if(isset($_GET['modif'])){
     <form action="modifParam.php" method="POST" enctype="application/x-www-form-urlencoded">
         <div>
 	        <p>E-Mail</p>
-	        <p><input type="email" name="Mail" class="obligatoire" required maxLength="45" value="<?php $datas[0][0]; ?>"/></p>
+	        <p><input type="email" name="Mail" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][0]; ?>"/></p>
         </div>
         <div>
 	        <p>Mot de passe</p>
