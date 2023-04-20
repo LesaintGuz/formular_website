@@ -70,19 +70,35 @@
 
 .DataVisualizer{
     float: left ;
-    background-color: white;
+    background-color: #ACB676;
     filter: blur(0px);
     -webkit-filter: blur(0px);
     
-    border: 5px solid black;
-    padding: 3%;
-    margin-left: 40%;
-    margin-right: 30%;
+    border: none;
+    padding-left: 3%;
+    padding-right: 3%;
+
+    margin-left: 27%;
     margin-top: 7%;
 
     z-index: 3;
 }
 
+.InfoPersonne{
+    display: block;
+}
+
+.AlignLeft {
+   display: flex ; /* ruby-base-container*/
+}
+
+.Location{
+
+}
+
+.BTN_zone{
+
+}
 
 
 .ValidBtn{
@@ -92,7 +108,6 @@
 .DelBtn{
 
 }
-
 
 
 

@@ -67,34 +67,42 @@
         <div class="wallPaper"></div>
             <div class="DataVisualizer">
                 <form action="modifUser.php" method="POST" enctype="application/x-www-form-urlencoded">
-                    <div><!-- info personne -->
-                        <div>
-                            <p>Nom</p>
-                            <p><input type="text" name="Nom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][0]; ?>" pattern="^[^0-9]+$"/></p>  
-                        </div>
-                        <div>
-                            <p>Prenom</p>
-                            <p><input type="text" name="Prenom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][1]; ?>" pattern="^[^0-9]+$"/></p>
+                    <div class="InfoPersonne"><!-- info personne -->
+                        <div class="AlignLeft">
+                            <div>
+                                <p>Nom</p>
+                                <p><input type="text" name="Nom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][0]; ?>" pattern="^[^0-9]+$"/></p>  
+                            </div>
+
+                            <div>
+                                <p>Prenom</p>
+                                <p><input type="text" name="Prenom" class="obligatoire" required maxLength="45" value="<?php echo $datas[0][1]; ?>" pattern="^[^0-9]+$"/></p>
+                            </div>
+
+                            <div>
+                                <p>Date de naissance</p>
+                                <p><input type="date" name="Birthdate" class="obligatoire" required value="<?php echo $datas[0][3]; ?>" min='1899-01-01' max='2007-12-12'/></p>
+                            </div>
                         </div>
 
-                        <div>
-                            <p>Date de naissance</p>
-                            <p><input type="date" name="Birthdate" class="obligatoire" required value="<?php echo $datas[0][3]; ?>" min='1899-01-01' max='2007-12-12'/></p>
-                        </div>
+                        <br>
 
-                        <div>
-                            <p>Numéro de téléphone</p>
-                            <p><input type="tel" name="Phone" class="obligatoire" required  value="<?php echo $datas[0][4]; ?>" maxLength="10" pattern="^[0-9]{10}$"/></p>
-                        </div>
+                        <div class="AlignLeft"> 
+                            <div>
+                                <p>Numéro de téléphone</p>
+                                <p><input type="tel" name="Phone" class="obligatoire" required  value="<?php echo $datas[0][4]; ?>" maxLength="10" pattern="^[0-9]{10}$"/></p>
+                            </div>
 
+                            <div>
+                                <p>Numéros de sécurité sociale</p>
+                                <p><input type="text" name="NumSecu" class="obligatoire" required maxLength="15" pattern="^[0-9]{15}$" value="<?php echo $datas[0][5]; ?>"/></p>
+                            </div>
                         <div>
-                            <p>Numéros de sécurité sociale</p>
-                            <p><input type="text" name="NumSecu" class="obligatoire" required maxLength="15" pattern="^[0-9]{15}$" value="<?php echo $datas[0][5]; ?>"/></p>
-                        </div>
-
+                    
                     </div>
+                    
 
-                    <div> <!-- location --> 
+                    <div class="Location"> <!-- location --> 
                         <div>
                             <p>Adresse</p>
                             <p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"/></p>
@@ -111,7 +119,7 @@
                         </div>
                     <div>
 
-                    <div> <!-- BTN -->
+                    <div class="BTN_zone"> <!-- BTN -->
                         <div>
                             <input type="reset" value="Supprimer les modifications">
                         </div>
