@@ -82,12 +82,12 @@
                         <div class="AlignLeft"> 
                             <div class="HorizontalElement">
                                 <p>Numéro de téléphone</p>
-                                <p><input type="tel" name="Phone" class="obligatoire" required  value="<?php echo $datas[0][4]; ?>" size="10" pattern="^[0-9]{10}$"/></p>
+                                <p><input type="tel" name="Phone" class="obligatoire" required  value="<?php echo $datas[0][4]; ?>" size="12" maxLength="10" pattern="^[0-9]{10}$"/></p>
                             </div>
 
                             <div class="HorizontalElement">
                                 <p>Numéros de sécurité sociale</p>
-                                <p><input type="text" name="NumSecu" class="obligatoire" required size="15" pattern="^[0-9]{15}$" value="<?php echo $datas[0][5]; ?>"/></p>
+                                <p><input type="text" name="NumSecu" class="obligatoire" required size="18" maxLength="15" pattern="^[0-9]{15}$" value="<?php echo $datas[0][5]; ?>"/></p>
                             </div>
                         </div>
                     </div>
@@ -95,7 +95,7 @@
                         <!-- location --> 
                         <div class="Location"> 
                             <p>Adresse</p>
-                            <p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"
+                            <p><input type="text" name="Adresse1" class="obligatoire" required size="50" maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"
                             pattern='(?=^[^- ].*[^- ]$)(^[^;(\):!¨/{}_<>`~"#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>
 
                             <div class="AlignLeft">
@@ -118,7 +118,16 @@
                             </div>
 
                             <div class="HorizontalElement"> <!-- nuke_btn --> 
-                                <a class="DelBtn" href="deleteAccount.php">Supprimer ses données</a>
+                                <div class="SucessBoxParam InfoBox" id="AlertDiv" hidden>
+                                    <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                    <p>Attention !</p>
+                                    <p>Vos données seront supprimer définitivement</p>
+                                    <div>
+                                        <p class="DelBtn" onclick="this.parentElement.style.display='none';">NON</p>
+                                        <p class="ValidBtn"><a href="deleteAccount.php">OUI</a></p>
+                                    </div>
+                                </div>
+                                <p class="DelBtn"><input type="button" onclick="myFunction()" value="Supprimer ses données"></p>
                             </div>
 
                             <div class="HorizontalElement">
@@ -141,3 +150,14 @@
                 ?>
             </div>
         </body>
+<scipt>
+    function myFunction() {
+        var x = document.getElementById("AlertDiv");
+        x.hidden = true;
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>
