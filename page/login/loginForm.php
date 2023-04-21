@@ -44,7 +44,7 @@
                 
             <form action="DoLoogin.php" method="post">
                 <div>
-                    <p>E-mail</p>
+                    <p>E-Mail</p>
                     <p><input type="email" name="Username" class="obligatoire" required maxLength="45"/></p>
                 </div>
                 <div>
