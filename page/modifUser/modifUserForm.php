@@ -77,14 +77,14 @@
                                 <p>Nom</p>
                                 <p class="LongHorizontalInputFields">
                                     <input type="text" name="Nom" required maxLength="45" value="<?php echo $datas[0][0]; ?>"
-                                class="Name" pattern="(?=^[^-' ].*[^-' ]$)(^[^0-9,(\);:!^¨/{}_<>`~#@°+€=*&?§£$¤µ|[\]\\]+$)"/></p>  
+                                class="Name" pattern='(?=^[^- ].*[^- ]$)(^[^0-9,(\);:!^¨/{}_"<>`~#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>  
                             </div>
 
                             <div class="HorizontalElement">
                                 <p>Prenom</p>
                                 <p class="LongHorizontalInputFields">
                                     <input type="text" name="Prenom" required maxLength="45" value="<?php echo $datas[0][1]; ?>"
-                                class="Name" pattern="(?=^[^-' ].*[^-' ]$)(^[^0-9,(\);:!^¨/{}_<>`~#@°+€=*&?§£$¤µ|[\]\\]+$)"/></p>
+                                class="Name" pattern='(?=^[^- ].*[^- ]$)(^[^0-9,(\);:!^¨/{}_"<>`~#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>
                             </div>
                         </div>
                         <div>
@@ -107,8 +107,8 @@
                         <!-- location --> 
                         <div class="Location"> 
                             <p>Adresse</p>
-                            <p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"
-                            pattern="(?=^[^-' ].*[^-' ]$)(^[^;(\):!¨/{}_<>^`~#@°+€=*&?§£$¤µ|[\]\\]+$)"/></p>
+                            <p><input type="text" name="Adresse1" class="obligatoire" required minlength="6" maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"
+                            pattern='(?=^[^- ].*[^- ]$)(^[^;(\):!¨/{}_<>"^`~#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>
                             <div class="AlignLeft">
                                 <div class="HorizontalElement">
                                     <p>Code Postal</p>
@@ -117,7 +117,8 @@
 
                                 <div class="HorizontalElement">
                                     <p>Ville</p>
-                                    <p><input type="text" name="Adresse3" class="Name" required value="<?php if(isset($adress[2])){echo $adress[2];} ?>" pattern="^[^0-9]+$"/></p>
+                                    <p><input type="text" name="Adresse3" class="Name" required value="<?php if(isset($adress[2])){echo $adress[2];} ?>" 
+                                    minLength='3' pattern='(?=^[^- ].*[^- ]$)(^[^;(\):!¨/{}_<>"^`~#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>
                                 </div>
                             </div>
                         </div>

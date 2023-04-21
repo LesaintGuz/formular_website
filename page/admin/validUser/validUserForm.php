@@ -20,21 +20,22 @@ $addResult = NULL;
 if(isset($_GET['add'])){
     $addResult = $_GET['add'];
 }
+?>
 
-echo <<<EOF
  <!DOCTYPE html>
 <html lang="fr">
 <head>
 <link rel="stylesheet" href="../../../CSS/Style.css">
 <meta charset="utf-8" />
 <title>Admin</title>
+
 </head>
 <body>
 <div>Clément GOMEZ & Ulysse HAV֤E</div>
 <div>Admin Kingdom</div>
 <a href="../../modifParam/paramForm.php">Paramètres</a>
 <a href="../../login/loginForm.php">Deconnexion</a>
-EOF;
+<?php
 if($addResult != NULL){
     if($addResult='succeed'){
         echo <<<EOF
@@ -54,12 +55,13 @@ if($delResult != NULL){
         EOF;
     }
 }
-echo<<<EOF
+?>
 <div><a href="../../modifUser/modifUserForm.php">Mes données</a></div>
 <table name="waitingUsers" id="waitingUsersTable">
 <thead><tr><td>Refuser</td><td>Id</td><td>Mail</td><td>Admin</td><td>Valider</td>
 </tr></thead><tbody>
-EOF;
+
+<?php
 foreach ($datas as $data){
 echo <<<EOF
     <tr>
@@ -106,8 +108,7 @@ echo <<<EOF
         </td></form></tr>
     EOF;
 }
-echo <<<EOF
+?>
 </tbody>
 </table>
 </body>
-EOF;
