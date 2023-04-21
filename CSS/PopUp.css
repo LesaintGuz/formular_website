@@ -81,6 +81,16 @@
     margin-top: 2%;
 }
 
+.ErrorBoxParam{
+    background-color: #eb3f3f ;
+    color : white ;
+    padding: 5%;
+
+    text-align: center;
+    margin: auto;
+    margin-top: 2%;
+}
+
 .InfoBox{
     background-color: rgb(161, 155, 155);
 }

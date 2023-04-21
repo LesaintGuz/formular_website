@@ -13,6 +13,8 @@ if($mail == NULL || $pass == NULL){
 
 require_once ('../../mysql/ControleurConnexion.php');
 $con = new ControleurConnexion();
+
+#Test if mail is already used
 $where = 'Mail ="' . $mail  . '"';
 $waitingUsers = $con->consulter('Mail', 'waitingUser', '', $where , '', '', '', '');
 $users = $con->consulter('Mail', 'userInfos', '', $where , '', '', '', '');

@@ -14,6 +14,21 @@ p {
     vertical-align: middle;
 }
 
+thead{
+    background-color: #2a7c2d;
+    color: white;
+}
+
+td,th {
+    text-align: center;
+    border: 2px solid black;
+    width: 30%;  
+}
+
+tbody{
+    background-color: white;
+}
+
 .Name 
 {
     text-transform:capitalize;
