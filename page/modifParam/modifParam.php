@@ -9,6 +9,22 @@ $Mail = isset ( $_POST ['Mail'] ) ? $_POST ['Mail'] : NULL;
 $Mdp = isset ( $_POST ['Mdp'] ) ? $_POST ['Mdp'] : NULL;
 require_once ('../../mysql/ControleurConnexion.php');
 $connexion = new ControleurConnexion ();
+$datas = $connexion->consulter('Mail', 'waitingUser', '', '', '', '', '', '');
+foreach($datas as $data){
+    if($Mail == $data[0]){
+        header("Location: paramForm.php?modif=fail");
+        die();
+    }
+}
+
+$savedDatas = $connexion->consulter('Mail', 'userInfos', '', '', '', '', '', '');
+foreach($savedDatas as $data){
+    if($Mail == $data[0]){
+        header("Location: paramForm.php?modif=fail");
+        die();
+    }
+}
+
 if($Mdp != 'xxxx'){
 $Mdp = password_hash($Mdp, $PASSWORD_DEFAULT);
 $connexion->modifier ( "userInfos", 'Mail="' . $Mail . '" , Mdp="' . $Mdp . '"', "Id='" . $_SESSION['Id'] . "'", NULL , NULL );

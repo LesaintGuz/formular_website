@@ -22,7 +22,7 @@ if(isset($_GET['modif'])){
 <html lang="fr">
 <head>
         <link rel="stylesheet" href="../../CSS/Style.css">
-        <link rel="icon" href="../../CSS/logo/favicon.ico" type="image/ico"><link rel="stylesheet" href="../../CSS/Style.css">
+        <link rel="icon" href="../../CSS/logo/favicon.ico" type="image/ico">
         <link rel="stylesheet" href="../../CSS/ModifStyle.css">
         <link rel="stylesheet" href="../../CSS/PopUp.css">
         <meta charset="utf-8" />
@@ -48,16 +48,24 @@ if(isset($_GET['modif'])){
     <div class="Datavisualizer">
     <?php
     if($result != NULL){
-        if($result='succeed'){
+        if($result=='succeed'){
             echo <<<EOF
             <div class="SucessBoxParam">
             <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
             Modifications enregistrées avec succès
             </div>
             EOF;
+        }else if($result == "fail"){
+            echo <<<EOF
+            <div class="ErrorBoxParam">
+            <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
+            Modifications échouées, l'adresse mail est déjà utilisée
+            </div>
+            EOF;
         }
     }
     ?>
+    <div><p class="Title">Paramètres de connexion</p></div>
     <form action="modifParam.php" method="POST" enctype="application/x-www-form-urlencoded">
         <div>
 	        <p>E-Mail</p>
@@ -68,8 +76,8 @@ if(isset($_GET['modif'])){
 	        <p><input type="text" name="Mdp" class="obligatoire" required value="xxxx"/></p>
         </div>
         <div class="AlignLeft">
-            <p class="HorizontalElement"><input type="reset" value="Supprimer les modifications"></p>
-	        <p class="HorizontalElement"><input name="validate" type="submit" value="Modifier les paramètres" /></p>
+            <p class="HorizontalElement"><input class="ResetBtn" type="reset" value="Supprimer les modifications"></p>
+	        <p class="HorizontalElement"><input class="ValidBtn" name="validate" type="submit" value="Modifier les paramètres" /></p>
         </div>
     </form>
     </div>

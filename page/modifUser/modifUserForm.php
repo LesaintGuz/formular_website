@@ -69,6 +69,7 @@
                         }
                     }
                 ?>
+                <div><p class="Title">Mes données</p></div>
                 <form action="modifUser.php" method="POST" enctype="application/x-www-form-urlencoded">
                     
                     <div class="InfoPersonne">

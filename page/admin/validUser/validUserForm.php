@@ -25,21 +25,31 @@ if(isset($_GET['add'])){
  <!DOCTYPE html>
 <html lang="fr">
 <head>
-<link rel="stylesheet" href="../../../CSS/Style.css">
-<meta charset="utf-8" />
-<title>Admin</title>
-
+    <meta charset="utf-8" />
+    <title>Admin</title>
+    <link rel="stylesheet" href="../../../CSS/Style.css">
+    <link rel="icon" href="../../../CSS/logo/favicon.ico" type="image/ico">
+    <link rel="stylesheet" href="../../../CSS/ModifStyle.css">
+    <link rel="stylesheet" href="../../../CSS/PopUp.css">
+    <meta charset="utf-8" />
 </head>
 <body>
-<div>Clément GOMEZ & Ulysse HAV֤E</div>
-<div>Admin Kingdom</div>
-<a href="../../modifParam/paramForm.php">Paramètres</a>
-<a href="../../login/loginForm.php">Deconnexion</a>
+    <header>
+        <div class="headBarImg"></div>
+    </header>
+    <div class="WallpaperTank"></div>
+    <div class="HeadBar">
+        <a href="../../modifUser/modifUserForm.php">Mes données</a>                
+        <a href="../../modifParam/paramForm.php">Paramètres</a>
+        <a href="../../login/loginForm.php">Deconnexion</a>
+    </div>
+    <div class="Datavisualizer">
 <?php
 if($addResult != NULL){
     if($addResult='succeed'){
         echo <<<EOF
-        <div>
+        <div class="SucessBoxParam">
+        <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
         Utilisateur accepté
         </div>
         EOF;
@@ -49,23 +59,24 @@ if($addResult != NULL){
 if($delResult != NULL){
     if($delResult='succeed'){
         echo <<<EOF
-        <div>
+        <div class="SucessBoxParam">
+        <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
         Utilisateur refusé
         </div>
         EOF;
     }
 }
 ?>
-<div><a href="../../modifUser/modifUserForm.php">Mes données</a></div>
+<div><p class="Title">Utilisateurs en attente de validation</p></div>
 <table name="waitingUsers" id="waitingUsersTable">
-<thead><tr><td>Refuser</td><td>Id</td><td>Mail</td><td>Admin</td><td>Valider</td>
+<thead><tr><td>Refuser</td><td>Mail</td><td>Admin</td><td>Valider</td>
 </tr></thead><tbody>
 
 <?php
 foreach ($datas as $data){
 echo <<<EOF
     <tr>
-            <td><form action="../deleteWaitingUser.php" method="POST" enctype="application/x-www-form-urlencoded">
+        <td><form action="../deleteWaitingUser.php" method="POST" enctype="application/x-www-form-urlencoded">
         <input type="hidden" name="Id" value="
 EOF;
 echo $data[0];
@@ -81,12 +92,6 @@ echo <<<EOF
     echo $data[0];
     echo <<<EOF
     ">
-        <Label>
-    EOF;
-    echo $data[0];
-    echo <<<EOF
-        </Label>
-        </td><td>
         <Label>
     EOF;
     echo $data[1];

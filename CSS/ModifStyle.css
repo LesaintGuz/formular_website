@@ -159,6 +159,11 @@
     padding-right: 3%;
 }
 
+.Title{
+    margin-top: 2%;
+    font-size: 115%;
+}
+
 .BTN_zone{
    
 }
@@ -217,15 +222,6 @@ table{
     border: 2px solid black;
 }
 
-thead{
-
-}
-
-td,th {
-    text-align: center;
-    border: 2px solid black;
-    width: 30%;
-}
 
 /* <tr class="tr_h"> */
 #tr_h{
