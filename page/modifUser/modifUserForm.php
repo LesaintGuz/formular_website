@@ -65,14 +65,14 @@
                                 <p>Nom</p>
                                 <p class="LongHorizontalInputFields">
                                     <input type="text" name="Nom" required maxLength="45" value="<?php echo $datas[0][0]; ?>"
-                                class="Name" pattern='(?=^[^-].*[^-]$)(^[^0-9,(\);:!¨ /{}_<>`~"#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>  
+                                class="Name" pattern='(?=^[^- ].*[^- ]$)(^[^0-9,(\);:!¨/{}_<>`~"#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>  
                             </div>
 
                             <div class="HorizontalElement">
                                 <p>Prenom</p>
                                 <p class="LongHorizontalInputFields">
                                     <input type="text" name="Prenom" required maxLength="45" value="<?php echo $datas[0][1]; ?>"
-                                class="Name" pattern='(?=^[^-].*[^-]$)(^[^0-9,(\);:!¨ /{}_<>`~"#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>
+                                class="Name" pattern='(?=^[^- ].*[^- ]$)(^[^0-9,(\);:!¨/{}_<>`~"#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>
                             </div>
                         </div>
                         <div>
