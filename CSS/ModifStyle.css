@@ -164,6 +164,8 @@
 }
 
 .ResetBtn{
+  cursor: pointer;
+
   background-color: #7a7a7a; 
   border: none;
   color: white;
@@ -176,7 +178,9 @@
 }
 
 .ValidBtn{
-    background-color: #4caa4f; 
+  cursor: pointer;
+
+  background-color: #4caa4f; 
   border: none;
   color: white;
   padding: 15px 32px;
@@ -188,6 +192,8 @@
 }
 
 .DelBtn{
+    cursor: pointer;
+
     background-color: rgb(219, 56, 56);
     border: none;
     color: white;

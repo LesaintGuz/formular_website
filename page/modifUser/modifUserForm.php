@@ -123,7 +123,7 @@
                                     <p>Vos données seront supprimer définitivement</p>
                                     <div>
                                         <p class="DelBtn" onclick="hiddeAlert()">NON</p>
-                                        <p class="ValidBtn"><a href="deleteAccount.php">OUI</a></p>
+                                        <p><a class="ValidBtn" href="deleteAccount.php">OUI</a></p>
                                     </div>
                                 </div>
                                 <p id="DelBtn"><input class="DelBtn" onclick="showAlert()" value="Supprimer ses données"></p>
