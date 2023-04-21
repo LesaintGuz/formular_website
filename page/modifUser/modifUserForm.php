@@ -125,38 +125,44 @@
 
                         <div class="AlignLeft"> <!-- BTN -->
                             <div class="HorizontalElement">
-                                <p class="CenterVertically"><input class="ResetBtn" type="reset" value="Supprimer les modifications"></p>
+                                <p><input class="ResetBtn" type="reset" value="Supprimer les modifications"></p>
                             </div>
 
                             <div class="HorizontalElement"> <!-- nuke_btn --> 
                                 <div class="SucessBoxParam InfoBox" id="AlertDiv" hidden>
-                                    <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
                                     <p>Attention !</p>
                                     <p>Vos données seront supprimer définitivement</p>
                                     <div>
-                                        <p class="DelBtn" onclick="this.parentElement.style.display='none';">NON</p>
+                                        <p class="DelBtn" onclick="hiddeAlert()">NON</p>
                                         <p class="ValidBtn"><a href="deleteAccount.php">OUI</a></p>
                                     </div>
                                 </div>
-                                <p class="DelBtn"><input type="button" onclick="myFunction()" value="Supprimer ses données"></p>
+                                <p id="DelBtn"><input class="DelBtn" onclick="showAlert()" value="Supprimer ses données"></p>
                             </div>
 
-                            <div class="HorizontalElement">
-                                <p class="CenterVertically"><input class="ValidBtn" name="bouton_valider" type="submit" value="Modifier les données" /></p>
+                            <div class="HorizontalElement" >
+                                <p><input class="ValidBtn" name="bouton_valider" type="submit" value="Modifier les données" /></p>
                             </div> 
 
                         </div>  
                 </form>
             </div>
         </body>
-<scipt>
-    function myFunction() {
+<script>
+    function showAlert() {
+        var x = document.getElementById("AlertDiv");
+        x.hidden = false; 
+        var a = document.getElementById("DelBtn");
+        a.hidden = true;
+    }
+
+    function hiddeAlert(){
         var x = document.getElementById("AlertDiv");
         x.hidden = true;
-        if (x.style.display === "none") {
-            x.style.display = "block";
-        } else {
-            x.style.display = "none";
-        }
+        var a = document.getElementById("DelBtn");
+        a.hidden = false;
     }
+
+
 </script>
+</html>
