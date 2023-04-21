@@ -57,6 +57,18 @@
         </header>
         <div class="wallPaper"></div>
             <div class="DataVisualizer">
+            <?php
+                     if($result != NULL){
+                        if($result='succeed'){
+                            echo <<<EOF
+                            <div class="SucessBoxParam">
+                                <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                Modifications enregistrées avec succès
+                            </div>
+                            EOF;
+                        }
+                    }
+                ?>
                 <form action="modifUser.php" method="POST" enctype="application/x-www-form-urlencoded">
                     
                     <div class="InfoPersonne">
@@ -65,14 +77,14 @@
                                 <p>Nom</p>
                                 <p class="LongHorizontalInputFields">
                                     <input type="text" name="Nom" required maxLength="45" value="<?php echo $datas[0][0]; ?>"
-                                class="Name" pattern='(?=^[^- ].*[^- ]$)(^[^0-9,(\);:!¨/{}_<>`~"#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>  
+                                class="Name" pattern="(?=^[^-' ].*[^-' ]$)(^[^0-9,(\);:!^¨/{}_<>`~#@°+€=*&?§£$¤µ|[\]\\]+$)"/></p>  
                             </div>
 
                             <div class="HorizontalElement">
                                 <p>Prenom</p>
                                 <p class="LongHorizontalInputFields">
                                     <input type="text" name="Prenom" required maxLength="45" value="<?php echo $datas[0][1]; ?>"
-                                class="Name" pattern='(?=^[^- ].*[^- ]$)(^[^0-9,(\);:!¨/{}_<>`~"#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>
+                                class="Name" pattern="(?=^[^-' ].*[^-' ]$)(^[^0-9,(\);:!^¨/{}_<>`~#@°+€=*&?§£$¤µ|[\]\\]+$)"/></p>
                             </div>
                         </div>
                         <div>
@@ -95,9 +107,8 @@
                         <!-- location --> 
                         <div class="Location"> 
                             <p>Adresse</p>
-                            <p><input type="text" name="Adresse1" class="obligatoire" required size="50" maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"
-                            pattern='(?=^[^- ].*[^- ]$)(^[^;(\):!¨/{}_<>`~"#@°+€=*&?§£$¤µ|[\]\\]+$)'/></p>
-
+                            <p><input type="text" name="Adresse1" class="obligatoire" required maxLength="255" value="<?php if(isset($adress[0])){echo $adress[0];} ?>"
+                            pattern="(?=^[^-' ].*[^-' ]$)(^[^;(\):!¨/{}_<>^`~#@°+€=*&?§£$¤µ|[\]\\]+$)"/></p>
                             <div class="AlignLeft">
                                 <div class="HorizontalElement">
                                     <p>Code Postal</p>
@@ -135,18 +146,6 @@
 
                         </div>  
                 </form>
-                <?php
-                     if($result != NULL){
-                        if($result='succeed'){
-                            echo <<<EOF
-                            <div class="SucessBoxParam">
-                                <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                                Modifications enregistrées avec succès
-                            </div>
-                            EOF;
-                        }
-                    }
-                ?>
             </div>
         </body>
 <script>
