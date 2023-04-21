@@ -20,8 +20,27 @@
         <div class="BackIMG"></div>
         <div class="imgTopLeft"></div>
         <div class="WhiteBack">
+        <?php
+        if($result != NULL){
+            if($result == 'failed'){
+                echo <<<EOF
+                <div class="ErrorBoxParam">
+                    <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    Échec de la connexion, la combinaison email mot de passe est inconnue
+                </div>
+                EOF;
+            }else if($result == "succeed"){
+                echo <<<EOF
+                <div class="SucessBoxParam">
+                    <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                    Demande d'inscription validée
+                </div>
+                EOF;
+            }
+        }
+        ?>
 
-            <h1>Connexion</h1>
+        <h1>Connexion</h1>
                 
             <form action="DoLoogin.php" method="post">
                 <div>
@@ -40,23 +59,4 @@
         </div>
         
     </body>
-    <?php
-            if($result != NULL){
-                if($result == 'failed'){
-                    echo <<<EOF
-                    <div class="AlertBox">
-                        <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                        Échec de la connexion, la combinaison email mot de passe est inconnue
-                    </div>
-                    EOF;
-                }else if($result == 'succeed'){
-                    echo <<<EOF
-                    <div class="SucessBox">
-                        <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                        Votre demande d'enregistrement à bien été prise en compte
-                    </div>
-                    EOF;
-                }
-            }
-        ?>
 </html>
