@@ -98,7 +98,7 @@
                             </div>
 
                             <div class="HorizontalElement">
-                                <p>Numéros de sécurité sociale</p>
+                                <p>Numéro de sécurité sociale</p>
                                 <p><input type="text" name="NumSecu" class="obligatoire" required size="18" maxLength="15" pattern="^[0-9]{15}$" value="<?php echo $datas[0][5]; ?>"/></p>
                             </div>
                         </div>
