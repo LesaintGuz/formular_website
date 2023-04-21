@@ -113,7 +113,7 @@
                             <div class="AlignLeft">
                                 <div class="HorizontalElement">
                                     <p>Code Postal</p>
-                                    <p><input type="text" name="Adresse2" class="obligatoire" size="5" required pattern="^[0-9]{5}$" value="<?php if(isset($adress[1])){echo $adress[1];}?>"/></p>
+                                    <p><input type="text" name="Adresse2" class="obligatoire" size="7" maxLength="5" required pattern="^[0-9]{5}$" value="<?php if(isset($adress[1])){echo $adress[1];}?>"/></p>
                                 </div>
 
                                 <div class="HorizontalElement">
