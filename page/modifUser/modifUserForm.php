@@ -57,18 +57,6 @@
         </header>
         <div class="wallPaper"></div>
             <div class="DataVisualizer">
-                <?php
-                     if($result != NULL){
-                        if($result='succeed'){
-                            echo <<<EOF
-                            <div class="SucessBoxParam">
-                                <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
-                                Modifications enregistrées avec succès
-                            </div>
-                            EOF;
-                        }
-                    }
-                ?>
                 <form action="modifUser.php" method="POST" enctype="application/x-www-form-urlencoded">
                     
                     <div class="InfoPersonne">
@@ -139,5 +127,17 @@
 
                         </div>  
                 </form>
+                <?php
+                     if($result != NULL){
+                        if($result='succeed'){
+                            echo <<<EOF
+                            <div class="SucessBoxParam">
+                                <span class="closeBtn" onclick="this.parentElement.style.display='none';">&times;</span>
+                                Modifications enregistrées avec succès
+                            </div>
+                            EOF;
+                        }
+                    }
+                ?>
             </div>
         </body>
