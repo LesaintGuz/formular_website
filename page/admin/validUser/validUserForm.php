@@ -1,10 +1,8 @@
 <?php
 
 session_start();
-//echo " <div style=\"color:#ff00ff;\"> GET<pre>", print_r ( $_GET ), "</pre></div>";
-
+#redirection si utilisateur non connecté ou non administrateur
 if(!isset($_SESSION['Id']) || empty($_SESSION['Id'] || $_SESSION["Admin"] != 1)) {
-    //include 'login.php' ;
     header("Location: ../../login/loginForm.php");
     die();
 }

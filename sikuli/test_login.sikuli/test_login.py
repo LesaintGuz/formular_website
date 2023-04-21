@@ -19,7 +19,7 @@ click("1681983825146.png")
 click(Pattern("1682082674456.png").targetOffset(-2,15))
 type('123@test.com')
 click("1682082619412.png")
-if not exists("1681983199640.png"):
+if not exists("1682089236214.png"):
     logger.warning('user must complete mdp not display')
 else :
     logger.warning('test login : mdp field empty ok')
@@ -31,7 +31,7 @@ click(Pattern("1682082674456.png").targetOffset(-2,15))
 type('123')
 
 click("1682082619412.png")
-if not exists("1681984214477.png"):
+if not exists("1682089204902.png"):
     logger.warning('pop up mail must contain @ etc not displayed')
 else :
     logger.warning('test login : wrong mail format ok')

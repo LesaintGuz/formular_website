@@ -40,6 +40,7 @@
         }
         ?>
 
+        <h1>Clément GOMEZ et Ulysse HAVE</h1>
         <h1>Connexion</h1>
                 
             <form action="DoLoogin.php" method="post">

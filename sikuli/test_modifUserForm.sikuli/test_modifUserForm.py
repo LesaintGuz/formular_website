@@ -172,21 +172,8 @@ click("1682019298416.png")
 click("1682019298416.png")
 click("1681983825146-1.png")
 
-testSuccess('jean Paul', Pattern("1682060433774.png").targetOffset(156,12), 'name field')
-
-testSuccess('jean-Paul', Pattern("1682060433774.png").targetOffset(-161,12), 'name field')
-testSuccess('jean Paul', Pattern("1682060433774.png").targetOffset(-161,12), 'name field')
-testSuccess('jean', Pattern("1682060433774.png").targetOffset(-161,12), 'name field')
-
-testSuccess('jean-Paul', Pattern("1682060433774.png").targetOffset(156,12), 'name field')
-
-testSuccess('jean', Pattern("1682060433774.png").targetOffset(156,12), 'name field')
-
-
 #Test name
 fillName('154')
-#fillName("ab'")
-#fillName("'ab")
 fillName('ad154')
 fillName(' ')
 fillName('ad ')
@@ -251,6 +238,11 @@ testPhone(' ad')
 testPhone('ad12')
 testPhone('adbcdgefop')
 testPhone('adbcdg-fop')
+testPhone('11558ab922')
+testPhone('11558*4922')
+testPhone(' 15583592')
+testPhone('15583592 ')
+testPhone('155 83592')
 testPhone('123')
 
 #Test num secu
@@ -321,3 +313,27 @@ testCity('a1d')
 testCity('@d')
 testCity('a{d')
 testCity('ad&a')
+
+
+#test succeed
+testSuccess('jean Paul', Pattern("1682060433774.png").targetOffset(156,12), 'name field')
+
+testSuccess('jean-Paul', Pattern("1682060433774.png").targetOffset(-161,12), 'name field')
+testSuccess('jean Paul', Pattern("1682060433774.png").targetOffset(-161,12), 'name field')
+testSuccess('jean', Pattern("1682060433774.png").targetOffset(-161,12), 'name field')
+
+testSuccess('jean-Paul', Pattern("1682060433774.png").targetOffset(156,12), 'name field')
+
+testSuccess('jean', Pattern("1682060433774.png").targetOffset(156,12), 'name field')
+
+testSuccess('jean Paul', Pattern("1682060433774.png").targetOffset(156,12), 'name field')
+
+testSuccess('jean-Paul', Pattern("1682060433774.png").targetOffset(-161,12), 'name field')
+testSuccess('jean Paul', Pattern("1682060433774.png").targetOffset(-161,12), 'name field')
+testSuccess('jean', Pattern("1682060433774.png").targetOffset(-161,12), 'name field')
+
+testSuccess('jean-Paul', Pattern("1682060433774.png").targetOffset(156,12), 'first name field')
+
+testSuccess('jean', Pattern("1682060433774.png").targetOffset(156,12), 'first name field')
+
+
